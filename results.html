@@ -30,7 +30,7 @@
 <section>
 
 <h2>Results</h2>
-
+<input type="text" id="searchInput" placeholder="🔍 Search Programme..." onkeyup="searchProgramme()">
 
 <h2>Junior Programmes</h2>
 
@@ -496,6 +496,30 @@
 
 
 </section>
+<script>
+function searchProgramme() {
+    let input = document.getElementById("searchInput").value.toUpperCase();
+    let tables = document.getElementsByTagName("table");
 
+    for (let t = 0; t < tables.length; t++) {
+        let rows = tables[t].getElementsByTagName("tr");
+
+        for (let i = 1; i < rows.length; i++) {
+            let programme = rows[i].getElementsByTagName("td")[0];
+
+            if (programme) {
+                let text = programme.textContent || programme.innerText;
+
+                if (text.toUpperCase().indexOf(input) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    }
+}
+</script>
+    
 </body>
 </html>
