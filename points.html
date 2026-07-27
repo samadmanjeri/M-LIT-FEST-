@@ -33,7 +33,7 @@
 <h2>Team Points Table</h2>
 
 
-<table>
+<table id="pointsTable">
 
 <tr>
 <th>Rank</th>
@@ -41,33 +41,44 @@
 <th>Points</th>
 </tr>
 
-
 <tr>
-<td>1</td>
+<td></td>
 <td>Thibreez</td>
 <td>23</td>
 </tr>
 
-
 <tr>
-<td>2</td>
+<td></td>
 <td>Sheeraz</td>
 <td>14</td>
 </tr>
 
-
 <tr>
-<td>3</td>
+<td></td>
 <td>Ahvaz</td>
 <td>33</td>
 </tr>
-
 
 </table>
 
 
 </section>
 
+<script>
+const table = document.getElementById("pointsTable");
+const rows = Array.from(table.rows).slice(1);
 
+rows.sort((a, b) => {
+    const pointsA = parseInt(a.cells[2].textContent);
+    const pointsB = parseInt(b.cells[2].textContent);
+    return pointsB - pointsA;
+});
+
+rows.forEach((row, index) => {
+    row.cells[0].textContent = index + 1;
+    table.appendChild(row);
+});
+</script>
+    
 </body>
 </html>
