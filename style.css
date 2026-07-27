@@ -99,3 +99,12 @@ h2{
     height:auto;
     display:block;
 }
+#searchInput{
+    width:100%;
+    padding:12px;
+    margin:15px 0;
+    font-size:16px;
+    border:2px solid #007bff;
+    border-radius:8px;
+    box-sizing:border-box;
+}
