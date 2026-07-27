@@ -30,11 +30,18 @@
 <section>
 
 <h2>Results</h2>
+    <div class="category-buttons">
+    <button onclick="showCategory('junior')">Junior</button>
+    <button onclick="showCategory('senior')">Senior</button>
+    <button onclick="showCategory('general')">General</button>
+</div>
+
+<input type="text" id="searchInput" placeholder="🔍 Search Programme..." onkeyup="searchProgramme()">
 <input type="text" id="searchInput" placeholder="🔍 Search Programme..." onkeyup="searchProgramme()">
 
-<h2>Junior Programmes</h2>
+<h2 id="junior">Junior Programmes</h2>
 
-<table>
+<table id="juniorTable">
 
 <tr>
 <th>Programme</th>
@@ -254,9 +261,9 @@
 </tr>
 
 </table>
-<h2>Senior Programmes</h2>
+<h2 id="senior" style="display:none;">Senior Programmes</h2>
 
-<table>
+<table id="seniorTable" style="display:none;">
 
 <tr>
 <th>Programme</th>
@@ -391,9 +398,9 @@
 </tr>
 
 </table>
-<h2>General Programmes</h2>
+<h2 id="general" style="display:none;">General Programmes</h2>
 
-<table>
+<table id="generalTable" style="display:none;">
 
 <tr>
 <th>Programme</th>
@@ -515,6 +522,56 @@ function searchProgramme() {
                 } else {
                     rows[i].style.display = "none";
                 }
+            }
+        }
+    }
+}
+</script>
+    <script>
+function showCategory(category) {
+
+    document.getElementById("junior").style.display = "none";
+    document.getElementById("senior").style.display = "none";
+    document.getElementById("general").style.display = "none";
+
+    document.getElementById("juniorTable").style.display = "none";
+    document.getElementById("seniorTable").style.display = "none";
+    document.getElementById("generalTable").style.display = "none";
+
+    document.getElementById(category).style.display = "block";
+    document.getElementById(category + "Table").style.display = "table";
+
+    document.getElementById("searchInput").value = "";
+}
+
+function searchProgramme() {
+
+    let input = document.getElementById("searchInput").value.toUpperCase();
+
+    let visibleTable = null;
+
+    if (document.getElementById("juniorTable").style.display != "none") {
+        visibleTable = document.getElementById("juniorTable");
+    } else if (document.getElementById("seniorTable").style.display != "none") {
+        visibleTable = document.getElementById("seniorTable");
+    } else {
+        visibleTable = document.getElementById("generalTable");
+    }
+
+    let rows = visibleTable.getElementsByTagName("tr");
+
+    for (let i = 1; i < rows.length; i++) {
+
+        let programme = rows[i].getElementsByTagName("td")[0];
+
+        if (programme) {
+
+            let txt = programme.textContent || programme.innerText;
+
+            if (txt.toUpperCase().indexOf(input) > -1) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
             }
         }
     }
