@@ -6,9 +6,8 @@ body{
 }
 
 header{
-    background:#0b3d91;
-    color:white;
-    padding:20px;
+    background:none;
+    padding:0;
 }
 
 nav{
