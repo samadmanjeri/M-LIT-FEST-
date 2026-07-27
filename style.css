@@ -108,24 +108,26 @@ h2{
     border-radius:8px;
     box-sizing:border-box;
 }
-.category-buttons{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin:15px 0;
-    flex-wrap:wrap;
-}
-
-.category-buttons button{
-    padding:10px 20px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+#categorySelect{
+    width:90%;
+    max-width:400px;
+    padding:12px;
+    margin:15px auto;
+    display:block;
     font-size:16px;
-    background:#007bff;
-    color:white;
+    border:2px solid #007bff;
+    border-radius:8px;
+    background:white;
 }
 
-.category-buttons button:hover{
-    background:#0056b3;
+#searchInput{
+    width:90%;
+    max-width:400px;
+    padding:12px;
+    margin:15px auto;
+    display:block;
+    font-size:16px;
+    border:2px solid #28a745;
+    border-radius:8px;
+    box-sizing:border-box;
 }
