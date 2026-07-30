@@ -915,8 +915,34 @@ const programme = document.getElementById("programme");
 const resultCard = document.getElementById("resultCard");
 
 
-programme.addEventListener("change", function(){
+category.addEventListener("change", function(){
 
+    programme.innerHTML =
+    '<option value="">Choose Programme</option>';
+
+    resultCard.style.display="none";
+
+
+    if(this.value===""){
+        return;
+    }
+
+
+    programmes[this.value].forEach(function(item){
+
+        let option=document.createElement("option");
+
+        option.value=item;
+        option.textContent=item;
+
+        programme.appendChild(option);
+
+    });
+
+});
+
+
+programme.addEventListener("change", function(){
     if(this.value===""){
         resultCard.style.display="none";
         return;
