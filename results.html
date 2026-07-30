@@ -910,58 +910,23 @@ thirdTeam:""
 }
 
 };
-B   const category = document.getElementById("category");
+const category = document.getElementById("category");
 const programme = document.getElementById("programme");
 const resultCard = document.getElementById("resultCard");
-
-
-category.addEventListener("change", function(){
-
-    programme.innerHTML =
-    '<option value="">Choose Programme</option>';
-
-    resultCard.style.display="none";
-
-
-    if(this.value===""){
-        return;
-    }
-
-
-    programmes[this.value].forEach(function(item){
-
-        let option=document.createElement("option");
-
-        option.value=item;
-        option.textContent=item;
-
-        programme.appendChild(option);
-
-    });
-
-});
-
 
 
 programme.addEventListener("change", function(){
 
     if(this.value===""){
-
         resultCard.style.display="none";
         return;
-
     }
-
 
     resultCard.style.display="block";
 
-
-    document.getElementById("programTitle").textContent =
-    this.value;
-
+    document.getElementById("programTitle").textContent=this.value;
 
     let result = resultsData[this.value];
-
 
     if(result){
 
@@ -971,13 +936,11 @@ programme.addEventListener("change", function(){
         document.getElementById("firstTeam").textContent =
         result.firstTeam || "";
 
-
         document.getElementById("secondName").textContent =
         result.secondName || "Result Pending";
 
         document.getElementById("secondTeam").textContent =
         result.secondTeam || "";
-
 
         document.getElementById("thirdName").textContent =
         result.thirdName || "Result Pending";
@@ -989,7 +952,6 @@ programme.addEventListener("change", function(){
 
 });
 
-
 </script>
 
 </section>
@@ -997,103 +959,3 @@ programme.addEventListener("change", function(){
 </body>
 
 </html>
-
-
-const category = document.getElementById("category");
-const programme = document.getElementById("programme");
-const resultCard = document.getElementById("resultCard");
-
-
-category.addEventListener("change", function(){
-
-programme.innerHTML = 
-'<option value="">Choose Programme</option>';
-
-resultCard.style.display="none";
-
-
-if(this.value===""){
-return;
-}
-
-
-programmes[this.value].forEach(function(item){
-
-let option=document.createElement("option");
-
-option.value=item;
-option.textContent=item;
-
-programme.appendChild(option);
-
-});
-
-
-});
-
-
-
-programme.addEventListener("change", function(){
-
-
-if(this.value===""){
-
-resultCard.style.display="none";
-return;
-
-}
-
-
-resultCard.style.display="block";
-
-
-document.getElementById("programTitle").textContent=this.value;
-
-
-
-let result = resultsData[this.value];
-
-
-
-if(result){
-
-
-document.getElementById("firstName").textContent =
-result.firstName || "Result Pending";
-
-document.getElementById("firstTeam").textContent =
-result.firstTeam || "";
-
-
-document.getElementById("secondName").textContent =
-result.secondName || "Result Pending";
-
-document.getElementById("secondTeam").textContent =
-result.secondTeam || "";
-
-
-document.getElementById("thirdName").textContent =
-result.thirdName || "Result Pending";
-
-document.getElementById("thirdTeam").textContent =
-result.thirdTeam || "";
-
-
-}
-
-
-});
-
-
-</script>
-
-
-</section>
-
-
-</body>
-
-</html>
-
-
-</div>
