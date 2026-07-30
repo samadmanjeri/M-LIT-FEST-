@@ -8,12 +8,13 @@
 <title>Results - M-LIT FEST</title>
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <header>
-    <img src="banner1.jpg" alt="M-LIT FEST Banner" class="banner">
+<img src="banner1.jpg" class="banner" alt="Banner">
 </header>
 
 <nav>
@@ -28,45 +29,211 @@
 
 <h2>Festival Results</h2>
 
-<label><b>Select Category</b></label>
+<label>Select Category</label><br><br>
 
-<select id="categorySelect">
-    <option value="">-- Select Category --</option>
-    <option value="junior">Junior</option>
-    <option value="senior">Senior</option>
-    <option value="general">General</option>
+<select id="category">
+
+<option value="">Choose Category</option>
+
+<option value="junior">Junior</option>
+
+<option value="senior">Senior</option>
+
+<option value="general">General</option>
+
 </select>
 
 <br><br>
 
-<label><b>Select Programme</b></label>
+<label>Select Programme</label><br><br>
 
-<select id="programmeSelect">
-    <option value="">-- Select Programme --</option>
+<select id="programme">
+
+<option value="">Choose Programme</option>
+
 </select>
 
 <br><br>
 
-<div id="resultCard" class="result-card" style="display:none;">
+<div class="result-card">
 
-<h2 id="programmeTitle"></h2>
+<h2 id="programTitle">
 
-<div class="prize">
-🥇 <b>First Prize</b><br>
-<span id="firstName">-</span><br>
-<small id="firstTeam">-</small>
+Select a Programme
+
+</h2>
+
+<hr>
+
+<h3>🥇 First Prize</h3>
+
+<p id="firstName">
+
+Result Pending
+
+</p>
+
+<p id="firstTeam"></p>
+
+<hr>
+
+<h3>🥈 Second Prize</h3>
+
+<p id="secondName">
+
+Result Pending
+
+</p>
+
+<p id="secondTeam"></p>
+
+<hr>
+
+<h3>🥉 Third Prize</h3>
+
+<p id="thirdName">
+
+Result Pending
+
+</p>
+
+<p id="thirdTeam"></p>
+
 </div>
+<script>
 
-<div class="prize">
-🥈 <b>Second Prize</b><br>
-<span id="secondName">-</span><br>
-<small id="secondTeam">-</small>
-</div>
+const programmes = {
 
-<div class="prize">
-🥉 <b>Third Prize</b><br>
-<span id="thirdName">-</span><br>
-<small id="thirdTeam">-</small>
-</div>
+junior: [
 
-</div>
+"Memory Test",
+"Story Writing",
+"Essay Malayalam",
+"Pencil Drawing",
+"Water Colour Painting",
+"Spelling Bee Arabic",
+"Spelling Bee English",
+"Caption Writing",
+"Typing Malayalam",
+"Typing Arabic",
+"Hand Writing Malayalam",
+"Hand Writing English",
+"Hand Writing Arabic",
+"Book Test",
+"Mappilappattu",
+"Madh Song",
+"Bhakthi Ganam",
+"Elocution Malayalam",
+"Qira'ath",
+"Story Telling",
+"Thadrees",
+"Poem Recitation",
+"Adan",
+"Ganitha Keli",
+"Quiz",
+"Swarf Musabaqa",
+"Reading English",
+"Reading Arabic",
+"Hifz"
+
+],
+
+senior: [
+    "Future Writing",
+"Story Writing",
+"Essay Malayalam",
+"Pencil Drawing",
+"Slogan Writing",
+"Typing Malayalam",
+"Typing Arabic",
+"Caption Writing",
+"Social Tweet",
+"Poem Making",
+"e-Poster",
+"Book Test",
+"Hand Writing Malayalam",
+"Hand Writing English",
+"Hand Writing Arabic",
+"Mappilappattu",
+"Madh Song",
+"Bhakthi Ganam",
+"Elocution Malayalam",
+"Qira'ath",
+"Khuthuba",
+"Thadrees",
+"Hadees Musabaqa",
+"Quiz",
+"Ma'ashira"
+
+],
+
+general: [
+    "Moulid Recitation",
+"Qaseeda Recitation",
+"Nasheeda",
+"Qawali",
+"Mala Recitation",
+"Group Song",
+"Collage",
+"Elocution English",
+"Elocution Arabic",
+"Va'al",
+"Calligraphy",
+"Poster Designing",
+"Spot Magazine",
+"Baith Musabaqa",
+"AI Poem Making",
+"Logo Making",
+"Documentary",
+"Digital Presentation"
+
+]
+
+};
+
+const category = document.getElementById("category");
+const programme = document.getElementById("programme");
+
+category.addEventListener("change", function(){
+
+programme.innerHTML =
+'<option value="">Choose Programme</option>';
+
+if(this.value==="") return;
+
+programmes[this.value].forEach(function(item){
+
+programme.innerHTML +=
+<option value="${item}">${item}</option>;
+
+});
+
+});
+    programme.addEventListener("change", function(){
+
+if(this.value==""){
+document.getElementById("resultCard").style.display="none";
+return;
+}
+
+document.getElementById("resultCard").style.display="block";
+
+document.getElementById("programTitle").innerHTML=this.value;
+
+document.getElementById("firstName").innerHTML="Result Pending";
+document.getElementById("firstTeam").innerHTML="";
+
+document.getElementById("secondName").innerHTML="Result Pending";
+document.getElementById("secondTeam").innerHTML="";
+
+document.getElementById("thirdName").innerHTML="Result Pending";
+document.getElementById("thirdTeam").innerHTML="";
+
+});
+    </script>
+
+</section>
+
+</body>
+
+</html>
