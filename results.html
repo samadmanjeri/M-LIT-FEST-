@@ -28,9 +28,9 @@
 
 <h2>Festival Results</h2>
 
-<label for="categorySelect"><b>Select Category</b></label>
+<label><b>Select Category</b></label>
 
-<select id="categorySelect" onchange="showCategory(this.value)">
+<select id="categorySelect">
     <option value="">-- Select Category --</option>
     <option value="junior">Junior</option>
     <option value="senior">Senior</option>
@@ -39,187 +39,34 @@
 
 <br><br>
 
-<input
-type="text"
-id="searchInput"
-placeholder="🔍 Search Programme..."
-onkeyup="searchProgramme()"
-style="display:none;">
+<label><b>Select Programme</b></label>
 
-<h2 id="junior" style="display:none;">Junior Programmes</h2>
+<select id="programmeSelect">
+    <option value="">-- Select Programme --</option>
+</select>
 
-<table id="juniorTable" style="display:none;">
+<br><br>
 
-<tr>
-<th>Programme</th>
-<th>1st</th>
-<th>2nd</th>
-<th>3rd</th>
-</tr>
-<tr><td>Memory Test</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Story Writing</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Essay Malayalam</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Pencil Drawing</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Water Colour Painting</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Spelling Bee Arabic</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Spelling Bee English</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Caption Writing</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Typing Malayalam</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Typing Arabic</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Hand Writing Malayalam</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Hand Writing English</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Hand Writing Arabic</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Book Test</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Mappilappattu</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Madh Song</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Bhakthi Ganam</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Elocution Malayalam</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Qira'ath</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Story Telling</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Thadrees</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Poem Recitation</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Adan</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Ganitha Keli</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Quiz</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Swarf Musabaqa</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Reading English</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Reading Arabic</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Hifz</td><td>-</td><td>-</td><td>-</td></tr>
+<div id="resultCard" class="result-card" style="display:none;">
 
-</table>
-<h2 id="senior" style="display:none;">Senior Programmes</h2>
+<h2 id="programmeTitle"></h2>
 
-<table id="seniorTable" style="display:none;">
+<div class="prize">
+🥇 <b>First Prize</b><br>
+<span id="firstName">-</span><br>
+<small id="firstTeam">-</small>
+</div>
 
-<tr>
-<th>Programme</th>
-<th>1st</th>
-<th>2nd</th>
-<th>3rd</th>
-</tr>
+<div class="prize">
+🥈 <b>Second Prize</b><br>
+<span id="secondName">-</span><br>
+<small id="secondTeam">-</small>
+</div>
 
-<tr><td>Feature Writing</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Story Writing</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Essay Malayalam</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Pencil Drawing</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Slogan Writing</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Typing Malayalam</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Typing Arabic</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Caption Writing</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Social Tweet</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Poem Making</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>e-Poster</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Book Test</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Hand Writing Malayalam</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Hand Writing English</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Hand Writing Arabic</td><td>-</td><td>-</td><td>-</td></tr>
+<div class="prize">
+🥉 <b>Third Prize</b><br>
+<span id="thirdName">-</span><br>
+<small id="thirdTeam">-</small>
+</div>
 
-<tr><td>Mappilappattu</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Madh Song</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Bhakthi Ganam</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Elocution Malayalam</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Qira'ath</td><td>-</td><td>-</td><td>-</td></tr>
-
-<tr><td>Khuthuba</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Thadrees</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Hadees Musabaqa</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Quiz</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Ma'ashira</td><td>-</td><td>-</td><td>-</td></tr>
-
-</table>
-<h2 id="general" style="display:none;">General Programmes</h2>
-
-<table id="generalTable" style="display:none;">
-
-<tr>
-<th>Programme</th>
-<th>1st</th>
-<th>2nd</th>
-<th>3rd</th>
-</tr>
-
-<tr><td>Moulid Recitation</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Qaseeda Recitation</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Nasheeda</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Qawali</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Mala Recitation</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Group Song</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Collage</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Elocution English</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Elocution Arabic</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Va'al</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Calligraphy</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Poster Designing</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Spot Magazine</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Baith Musabaqa</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>AI Poem Making</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Logo Making</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Documentary</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>Digital Presentation</td><td>-</td><td>-</td><td>-</td></tr>
-
-</table>
-
-</section>
-
-<script>
-function showCategory(category){
-
-document.getElementById("searchInput").style.display="block";
-
-document.getElementById("junior").style.display="none";
-document.getElementById("senior").style.display="none";
-document.getElementById("general").style.display="none";
-
-document.getElementById("juniorTable").style.display="none";
-document.getElementById("seniorTable").style.display="none";
-document.getElementById("generalTable").style.display="none";
-
-document.getElementById(category).style.display="block";
-document.getElementById(category+"Table").style.display="table";
-
-document.getElementById("searchInput").value="";
-searchProgramme();
-}
-
-function searchProgramme(){
-
-let input=document.getElementById("searchInput").value.toUpperCase();
-
-let table;
-
-if(document.getElementById("juniorTable").style.display=="table"){
-table=document.getElementById("juniorTable");
-}
-else if(document.getElementById("seniorTable").style.display=="table"){
-table=document.getElementById("seniorTable");
-}
-else{
-table=document.getElementById("generalTable");
-}
-
-let tr=table.getElementsByTagName("tr");
-
-for(let i=1;i<tr.length;i++){
-
-let td=tr[i].getElementsByTagName("td")[0];
-
-if(td){
-
-let txt=td.textContent||td.innerText;
-
-if(txt.toUpperCase().indexOf(input)>-1){
-tr[i].style.display="";
-}
-else{
-tr[i].style.display="none";
-}
-
-}
-
-}
-
-}
-</script>
-
-</body>
-</html>
+</div>
