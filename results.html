@@ -55,7 +55,7 @@
 
 <br><br>
 
-<div class="result-card">
+<div id="resultCard" class="result-card" style="display:none;">
 
 <h2 id="programTitle">
 
@@ -203,8 +203,9 @@ if(this.value==="") return;
 
 programmes[this.value].forEach(function(item){
 
-programme.innerHTML +=
-<option value="${item}">${item}</option>;
+programme.innerHTML += 
+<option value="${item}">${item}</option>
+;
 
 });
 
