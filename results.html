@@ -14,7 +14,7 @@
 <body>
 
 <header>
-<img src="banner1.jpg" class="banner" alt="Banner">
+<img src="banner1.jpg" class="banner" alt="M-LIT FEST Banner">
 </header>
 
 <nav>
@@ -27,85 +27,55 @@
 
 <section>
 
-<h2>Festival Results</h2>
+<h2>🏆 Festival Results</h2>
 
-<label>Select Category</label><br><br>
+<label for="category"><b>Select Category</b></label><br><br>
 
 <select id="category">
-
 <option value="">Choose Category</option>
-
 <option value="junior">Junior</option>
-
 <option value="senior">Senior</option>
-
 <option value="general">General</option>
-
 </select>
 
 <br><br>
 
-<label>Select Programme</label><br><br>
+<label for="programme"><b>Select Programme</b></label><br><br>
 
 <select id="programme">
-
 <option value="">Choose Programme</option>
-
 </select>
 
 <br><br>
 
 <div id="resultCard" class="result-card" style="display:none;">
 
-<h2 id="programTitle">
-
-Select a Programme
-
-</h2>
+<h2 id="programTitle">Programme Name</h2>
 
 <hr>
 
 <h3>🥇 First Prize</h3>
-
-<p id="firstName">
-
-Result Pending
-
-</p>
-
+<p id="firstName">Result Pending</p>
 <p id="firstTeam"></p>
 
 <hr>
 
 <h3>🥈 Second Prize</h3>
-
-<p id="secondName">
-
-Result Pending
-
-</p>
-
+<p id="secondName">Result Pending</p>
 <p id="secondTeam"></p>
 
 <hr>
 
 <h3>🥉 Third Prize</h3>
-
-<p id="thirdName">
-
-Result Pending
-
-</p>
-
+<p id="thirdName">Result Pending</p>
 <p id="thirdTeam"></p>
 
 </div>
-<script>
 
-const programmes = {
+<script>
+    const programmes = {
 
 junior: [
-
 "Memory Test",
 "Story Writing",
 "Essay Malayalam",
@@ -135,11 +105,10 @@ junior: [
 "Reading English",
 "Reading Arabic",
 "Hifz"
-
 ],
 
 senior: [
-    "Future Writing",
+"Future Writing",
 "Story Writing",
 "Essay Malayalam",
 "Pencil Drawing",
@@ -164,11 +133,10 @@ senior: [
 "Hadees Musabaqa",
 "Quiz",
 "Ma'ashira"
-
 ],
 
 general: [
-    "Moulid Recitation",
+"Moulid Recitation",
 "Qaseeda Recitation",
 "Nasheeda",
 "Qawali",
@@ -186,49 +154,59 @@ general: [
 "Logo Making",
 "Documentary",
 "Digital Presentation"
-
 ]
 
 };
 
 const category = document.getElementById("category");
 const programme = document.getElementById("programme");
+const resultCard = document.getElementById("resultCard");
+    category.addEventListener("change", function () {
 
-category.addEventListener("change", function(){
+    programme.innerHTML = '<option value="">Choose Programme</option>';
 
-programme.innerHTML =
-'<option value="">Choose Programme</option>';
+    resultCard.style.display = "none";
 
-if(this.value==="") return;
+    if (this.value === "") {
+        return;
+    }
 
-programmes[this.value].forEach(function(item){
+    programmes[this.value].forEach(function (item) {
 
-programme.innerHTML += 
-<option value="${item}">${item}</option>
-;
+        const option = document.createElement("option");
+
+        option.value = item;
+
+        option.textContent = item;
+
+        programme.appendChild(option);
+
+    });
 
 });
 
-});
-    programme.addEventListener("change", function(){
+programme.addEventListener("change", function () {
 
-if(this.value==""){
-document.getElementById("resultCard").style.display="none";
-return;
-}
+    if (this.value === "") {
 
-document.getElementById("resultCard").style.display="block";
+        resultCard.style.display = "none";
 
-document.getElementById("programTitle").innerHTML=this.value;
+        return;
 
-document.getElementById("firstName").innerHTML="Result Pending";
-document.getElementById("firstTeam").innerHTML="";
+    }
 
-document.getElementById("secondName").innerHTML="Result Pending";
-document.getElementById("secondTeam").innerHTML="";
+    resultCard.style.display = "block";
 
-document.getElementById("thirdName").innerHTML="Result Pending";
-document.getElementById("thirdTeam").innerHTML="";
+    document.getElementById("programTitle").textContent = this.value;
+
+    document.getElementById("firstName").textContent = "Result Pending";
+    document.getElementById("firstTeam").textContent = "";
+
+    document.getElementById("secondName").textContent = "Result Pending";
+    document.getElementById("secondTeam").textContent = "";
+
+    document.getElementById("thirdName").textContent = "Result Pending";
+    document.getElementById("thirdTeam").textContent = "";
 
 });
     </script>
