@@ -79,17 +79,6 @@ h2{
     display:block;
 }
 
-#categorySelect{
-    width:90%;
-    max-width:400px;
-    padding:12px;
-    margin:15px auto;
-    display:block;
-    font-size:16px;
-    border:2px solid #007bff;
-    border-radius:8px;
-    background:white;
-}
 
 #searchInput{
     width:90%;
@@ -102,16 +91,27 @@ h2{
     border-radius:8px;
     box-sizing:border-box;
 }
-#programmeSelect{
+#category,
+#programme{
     width:90%;
     max-width:400px;
-    padding:12px;
+    padding:14px;
     margin:15px auto;
     display:block;
-    font-size:16px;
-    border:2px solid #007bff;
-    border-radius:8px;
-    background:white;
+    font-size:18px;
+    border:2px solid #d0d0d0;
+    border-radius:12px;
+    background:#fff;
+    color:#333;
+    outline:none;
+    box-sizing:border-box;
+    transition:0.3s;
+}
+
+#category:focus,
+#programme:focus{
+    border-color:#0b3d91;
+    box-shadow:0 0 8px rgba(11,61,145,0.3);
 }
 
 .result-card{
