@@ -12,43 +12,13 @@
 
 <style>
 
-.result-card{
-    width:90%;
-    max-width:500px;
-    margin:25px auto;
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.15);
-}
+/* =========================
+   RESULT POSTER
+========================= */
 
-.result-card h2{
-    margin-top:0;
-}
-
-.prize{
-    padding:10px;
-}
-
-.prize p{
-    margin:6px 0;
-    font-size:16px;
-}
-
-.team{
-    font-weight:bold;
-}
-
-select{
-    width:90%;
-    max-width:400px;
-    padding:12px;
-    font-size:16px;
-    border-radius:8px;
-}
 .result-poster{
     position:relative;
-    width:90%;
+    width:95%;
     max-width:600px;
     margin:25px auto;
     overflow:hidden;
@@ -58,6 +28,11 @@ select{
     width:100%;
     display:block;
 }
+
+
+/* =========================
+   POSTER TEXT
+========================= */
 
 .poster-result-number,
 .poster-category,
@@ -69,11 +44,18 @@ select{
     color:white;
 }
 
+
+/* Result number */
+
 .poster-result-number{
     top:27%;
     left:38%;
     font-size:52px;
+    font-weight:400;
 }
+
+
+/* Junior / Senior / General */
 
 .poster-category{
     top:38%;
@@ -83,39 +65,107 @@ select{
     font-weight:bold;
 }
 
+
+/* Programme */
+
 .poster-programme{
     top:42%;
     left:38%;
     font-size:34px;
     font-weight:bold;
+    line-height:1.05;
+    max-width:55%;
 }
+
+
+/* =========================
+   WINNERS
+========================= */
 
 .poster-winner{
     left:42%;
+    width:53%;
 }
+
+
+/* First */
 
 .winner-1{
     top:55%;
 }
 
+
+/* Second */
+
 .winner-2{
     top:65%;
 }
+
+
+/* Third */
 
 .winner-3{
     top:75%;
 }
 
+
 .poster-name{
     font-size:25px;
     font-weight:bold;
+    line-height:1.15;
 }
+
 
 .poster-team{
     color:#ffe500;
     font-size:19px;
     margin-top:3px;
+    line-height:1.15;
 }
+
+
+/* Second prize - second person */
+
+.second-person{
+    margin-top:8px;
+}
+
+
+/* Mobile */
+
+@media(max-width:500px){
+
+    .poster-result-number{
+        font-size:38px;
+    }
+
+    .poster-category{
+        font-size:22px;
+    }
+
+    .poster-programme{
+        font-size:25px;
+    }
+
+    .poster-winner{
+        left:41%;
+        width:55%;
+    }
+
+    .poster-name{
+        font-size:17px;
+    }
+
+    .poster-team{
+        font-size:14px;
+    }
+
+    .second-person{
+        margin-top:5px;
+    }
+
+}
+
 </style>
 
 </head>
@@ -204,71 +254,112 @@ Choose Programme
 <br><br>
 
 
-<div id="resultPoster" class="result-poster" style="display:none;">
+<!-- =========================
+     AUTOMATIC RESULT POSTER
+========================= -->
 
-    <img src="result-template.jpg" class="poster-bg">
+<div id="resultPoster"
+     class="result-poster"
+     style="display:none;">
 
-    <div class="poster-result-number" id="posterResultNumber"></div>
+    <img
+        src="result-template.jpg"
+        class="poster-bg"
+        alt="Result Poster">
 
-    <div class="poster-category" id="posterCategory"></div>
 
-    <div class="poster-programme" id="posterProgramme"></div>
+    <!-- Result Number -->
+
+    <div
+        class="poster-result-number"
+        id="posterResultNumber">
+    </div>
+
+
+    <!-- Category -->
+
+    <div
+        class="poster-category"
+        id="posterCategory">
+    </div>
+
+
+    <!-- Programme -->
+
+    <div
+        class="poster-programme"
+        id="posterProgramme">
+    </div>
+
+
+    <!-- FIRST PRIZE -->
 
     <div class="poster-winner winner-1">
-        <div class="poster-name" id="posterFirstName"></div>
-        <div class="poster-team" id="posterFirstTeam"></div>
+
+        <div
+            class="poster-name"
+            id="posterFirstName">
+        </div>
+
+        <div
+            class="poster-team"
+            id="posterFirstTeam">
+        </div>
+
     </div>
+
+
+    <!-- SECOND PRIZE -->
 
     <div class="poster-winner winner-2">
-        <div class="poster-name" id="posterSecondName"></div>
-        <div class="poster-team" id="posterSecondTeam"></div>
+
+        <div
+            class="poster-name"
+            id="posterSecondName">
+        </div>
+
+        <div
+            class="poster-team"
+            id="posterSecondTeam">
+        </div>
+
+
+        <!-- Second person if there are two
+             Second Prize winners -->
+
+        <div
+            class="second-person"
+            id="posterSecondName2">
+        </div>
+
+        <div
+            class="poster-team"
+            id="posterSecondTeam2">
+        </div>
+
     </div>
+
+
+    <!-- THIRD PRIZE -->
 
     <div class="poster-winner winner-3">
-        <div class="poster-name" id="posterThirdName"></div>
-        <div class="poster-team" id="posterThirdTeam"></div>
+
+        <div
+            class="poster-name"
+            id="posterThirdName">
+        </div>
+
+        <div
+            class="poster-team"
+            id="posterThirdTeam">
+        </div>
+
     </div>
 
 </div>
 
 
-<hr>
-
-
-<div class="prize">
-
-<h3>🥈 Second Prize</h3>
-
-<p id="secondName">
-Result Pending
-</p>
-
-<p id="secondTeam"
-   class="team">
-</p>
-
-</div>
-
-
-<hr>
-
-
-<div class="prize">
-
-<h3>🥉 Third Prize</h3>
-
-<p id="thirdName">
-Result Pending
-</p>
-
-<p id="thirdTeam"
-   class="team">
-</p>
-
-</div>
-
-
-</div>
+</section>
 
 
 <script>
@@ -389,7 +480,6 @@ const resultsData = {
 
 
 /* ---------- JUNIOR ---------- */
-
 
 junior: {
 
@@ -520,7 +610,6 @@ thirdName:"Sahal KT",
 thirdTeam:"Thibreez"
 },
 
-
 "Mappilappattu":{
 firstName:"Zameel",
 firstTeam:"Ahvaz",
@@ -602,7 +691,6 @@ thirdName:"Zameel",
 thirdTeam:"Ahvaz"
 },
 
-
 "Ganitha Keli":{
 firstName:"Muhammad Saeed",
 firstTeam:"Sheeraz",
@@ -612,7 +700,6 @@ thirdName:"Muhammad Janish",
 thirdTeam:"Ahvaz"
 },
 
-
 "Quiz":{
 firstName:"Muhammad Rabeeh",
 firstTeam:"Ahvaz",
@@ -621,7 +708,6 @@ secondTeam:"Thibreez",
 thirdName:"Muhammad Zameel",
 thirdTeam:"Ahvaz"
 },
-
 
 "Swarf Musabaqa":{
 firstName:"Sayyid Muhassir",
@@ -663,7 +749,6 @@ thirdTeam:"Ahvaz"
 
 
 /* ---------- SENIOR ---------- */
-
 
 senior: {
 
@@ -803,7 +888,6 @@ thirdName:"Sinan C",
 thirdTeam:"Sheeraz"
 },
 
-
 "Mappilappattu":{
 firstName:"Hasbin Sha",
 firstTeam:"Ahvaz",
@@ -898,7 +982,6 @@ thirdTeam:"Sheeraz"
 
 
 /* ---------- GENERAL ---------- */
-
 
 general: {
 
@@ -1081,34 +1164,47 @@ document.getElementById("category");
 const programme =
 document.getElementById("programme");
 
-const resultPoster = document.getElementById("resultPoster");
+const resultPoster =
+document.getElementById("resultPoster");
+
 
 const posterResultNumber =
-    document.getElementById("posterResultNumber");
+document.getElementById("posterResultNumber");
 
 const posterCategory =
-    document.getElementById("posterCategory");
+document.getElementById("posterCategory");
 
 const posterProgramme =
-    document.getElementById("posterProgramme");
+document.getElementById("posterProgramme");
+
 
 const posterFirstName =
-    document.getElementById("posterFirstName");
+document.getElementById("posterFirstName");
 
 const posterFirstTeam =
-    document.getElementById("posterFirstTeam");
+document.getElementById("posterFirstTeam");
+
 
 const posterSecondName =
-    document.getElementById("posterSecondName");
+document.getElementById("posterSecondName");
 
 const posterSecondTeam =
-    document.getElementById("posterSecondTeam");
+document.getElementById("posterSecondTeam");
+
+
+const posterSecondName2 =
+document.getElementById("posterSecondName2");
+
+const posterSecondTeam2 =
+document.getElementById("posterSecondTeam2");
+
 
 const posterThirdName =
-    document.getElementById("posterThirdName");
+document.getElementById("posterThirdName");
 
 const posterThirdTeam =
-    document.getElementById("posterThirdTeam");
+document.getElementById("posterThirdTeam");
+
 
 /* =========================
    CATEGORY CHANGE
@@ -1120,7 +1216,7 @@ category.addEventListener("change", function(){
     programme.innerHTML =
     '<option value="">Choose Programme</option>';
 
-    resultCard.style.display = "none";
+    resultPoster.style.display = "none";
 
 
     if(this.value === ""){
@@ -1153,93 +1249,153 @@ programme.addEventListener("change", function(){
 
     if(this.value === ""){
 
-        resultCard.style.display = "none";
+        resultPoster.style.display = "none";
 
         return;
+
     }
-
-
-    resultCard.style.display = "block";
-
-
-    document.getElementById("programTitle")
-    .textContent = this.value;
 
 
     const categoryValue =
     category.value;
 
+    const programmeValue =
+    this.value;
+
 
     const result =
-    resultsData[categoryValue][this.value];
+    resultsData[categoryValue]?.[programmeValue];
 
+
+    /* =========================
+       RESULT NUMBER
+       Based on programme order
+    ========================= */
+
+    const programmeIndex =
+    programmes[categoryValue].indexOf(programmeValue);
+
+    const resultNumber =
+    String(programmeIndex + 1).padStart(2,"0");
+
+
+    posterResultNumber.textContent =
+    resultNumber;
+
+
+    /* =========================
+       CATEGORY
+    ========================= */
+
+    posterCategory.textContent =
+    categoryValue.charAt(0).toUpperCase()
+    + categoryValue.slice(1);
+
+
+    /* =========================
+       PROGRAMME
+    ========================= */
+
+    posterProgramme.textContent =
+    programmeValue;
+
+
+    /* =========================
+       NO RESULT
+    ========================= */
 
     if(!result){
 
-        document.getElementById("firstName")
-        .textContent = "Result Pending";
+        posterFirstName.textContent =
+        "Result Pending";
 
-        document.getElementById("firstTeam")
-        .textContent = "";
+        posterFirstTeam.textContent = "";
 
-        document.getElementById("secondName")
-        .textContent = "Result Pending";
+        posterSecondName.textContent =
+        "Result Pending";
 
-        document.getElementById("secondTeam")
-        .textContent = "";
+        posterSecondTeam.textContent = "";
 
-        document.getElementById("thirdName")
-        .textContent = "Result Pending";
+        posterSecondName2.textContent = "";
 
-        document.getElementById("thirdTeam")
-        .textContent = "";
+        posterSecondTeam2.textContent = "";
+
+        posterThirdName.textContent =
+        "Result Pending";
+
+        posterThirdTeam.textContent = "";
+
+        resultPoster.style.display = "block";
 
         return;
+
     }
 
 
-    document.getElementById("firstName")
-    .textContent =
+    /* =========================
+       FIRST PRIZE
+    ========================= */
+
+    posterFirstName.textContent =
     result.firstName || "Result Pending";
 
 
-    document.getElementById("firstTeam")
-    .textContent =
+    posterFirstTeam.textContent =
     result.firstTeam
     ? "Team: " + result.firstTeam
     : "";
 
 
-    document.getElementById("secondName")
-    .textContent =
+    /* =========================
+       SECOND PRIZE
+    ========================= */
+
+    posterSecondName.textContent =
     result.secondName || "Result Pending";
 
 
-    document.getElementById("secondTeam")
-    .textContent =
+    posterSecondTeam.textContent =
     result.secondTeam
     ? "Team: " + result.secondTeam
     : "";
 
 
-    document.getElementById("thirdName")
-    .textContent =
+    /* Second Prize - second person */
+
+    posterSecondName2.textContent =
+    result.secondName2 || "";
+
+
+    posterSecondTeam2.textContent =
+    result.secondTeam2
+    ? "Team: " + result.secondTeam2
+    : "";
+
+
+    /* =========================
+       THIRD PRIZE
+    ========================= */
+
+    posterThirdName.textContent =
     result.thirdName || "Result Pending";
 
 
-    document.getElementById("thirdTeam")
-    .textContent =
+    posterThirdTeam.textContent =
     result.thirdTeam
     ? "Team: " + result.thirdTeam
     : "";
+
+
+    /* =========================
+       SHOW POSTER
+    ========================= */
+
+    resultPoster.style.display = "block";
 
 });
 
 
 </script>
-
-
-</section>
 
 
 </body>
