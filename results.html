@@ -46,7 +46,76 @@ select{
     font-size:16px;
     border-radius:8px;
 }
+.result-poster{
+    position:relative;
+    width:90%;
+    max-width:600px;
+    margin:25px auto;
+    overflow:hidden;
+}
 
+.poster-bg{
+    width:100%;
+    display:block;
+}
+
+.poster-result-number,
+.poster-category,
+.poster-programme,
+.poster-winner{
+    position:absolute;
+    z-index:2;
+    font-family:Arial, sans-serif;
+    color:white;
+}
+
+.poster-result-number{
+    top:27%;
+    left:38%;
+    font-size:52px;
+}
+
+.poster-category{
+    top:38%;
+    left:38%;
+    color:#ffe500;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.poster-programme{
+    top:42%;
+    left:38%;
+    font-size:34px;
+    font-weight:bold;
+}
+
+.poster-winner{
+    left:42%;
+}
+
+.winner-1{
+    top:55%;
+}
+
+.winner-2{
+    top:65%;
+}
+
+.winner-3{
+    top:75%;
+}
+
+.poster-name{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.poster-team{
+    color:#ffe500;
+    font-size:19px;
+    margin-top:3px;
+}
 </style>
 
 </head>
@@ -135,30 +204,30 @@ Choose Programme
 <br><br>
 
 
-<div id="resultCard"
-     class="result-card"
-     style="display:none;">
+<div id="resultPoster" class="result-poster" style="display:none;">
 
+    <img src="result-template.jpg" class="poster-bg">
 
-<h2 id="programTitle">
-Programme Name
-</h2>
+    <div class="poster-result-number" id="posterResultNumber"></div>
 
+    <div class="poster-category" id="posterCategory"></div>
 
-<hr>
+    <div class="poster-programme" id="posterProgramme"></div>
 
+    <div class="poster-winner winner-1">
+        <div class="poster-name" id="posterFirstName"></div>
+        <div class="poster-team" id="posterFirstTeam"></div>
+    </div>
 
-<div class="prize">
+    <div class="poster-winner winner-2">
+        <div class="poster-name" id="posterSecondName"></div>
+        <div class="poster-team" id="posterSecondTeam"></div>
+    </div>
 
-<h3>🥇 First Prize</h3>
-
-<p id="firstName">
-Result Pending
-</p>
-
-<p id="firstTeam"
-   class="team">
-</p>
+    <div class="poster-winner winner-3">
+        <div class="poster-name" id="posterThirdName"></div>
+        <div class="poster-team" id="posterThirdTeam"></div>
+    </div>
 
 </div>
 
@@ -1012,9 +1081,34 @@ document.getElementById("category");
 const programme =
 document.getElementById("programme");
 
-const resultCard =
-document.getElementById("resultCard");
+const resultPoster = document.getElementById("resultPoster");
 
+const posterResultNumber =
+    document.getElementById("posterResultNumber");
+
+const posterCategory =
+    document.getElementById("posterCategory");
+
+const posterProgramme =
+    document.getElementById("posterProgramme");
+
+const posterFirstName =
+    document.getElementById("posterFirstName");
+
+const posterFirstTeam =
+    document.getElementById("posterFirstTeam");
+
+const posterSecondName =
+    document.getElementById("posterSecondName");
+
+const posterSecondTeam =
+    document.getElementById("posterSecondTeam");
+
+const posterThirdName =
+    document.getElementById("posterThirdName");
+
+const posterThirdTeam =
+    document.getElementById("posterThirdTeam");
 
 /* =========================
    CATEGORY CHANGE
