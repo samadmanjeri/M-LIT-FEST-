@@ -1342,9 +1342,7 @@ programme.addEventListener("change", function(){
 
 
     posterFirstTeam.textContent =
-    result.firstTeam
-    ? "Team: " + result.firstTeam
-    : "";
+    result.firstTeam || "";
 
 
     /* =========================
@@ -1356,9 +1354,7 @@ programme.addEventListener("change", function(){
 
 
     posterSecondTeam.textContent =
-    result.secondTeam
-    ? "Team: " + result.secondTeam
-    : "";
+   result.firstTeam || "";
 
 
     /* Second Prize - second person */
@@ -1368,10 +1364,7 @@ programme.addEventListener("change", function(){
 
 
     posterSecondTeam2.textContent =
-    result.secondTeam2
-    ? "Team: " + result.secondTeam2
-    : "";
-
+    result.secondTeam || "";
 
     /* =========================
        THIRD PRIZE
@@ -1382,9 +1375,7 @@ programme.addEventListener("change", function(){
 
 
     posterThirdTeam.textContent =
-    result.thirdTeam
-    ? "Team: " + result.thirdTeam
-    : "";
+    result.thirdTeam || "";
 
 
     /* =========================
