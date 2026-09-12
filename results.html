@@ -26,6 +26,7 @@
 
 .poster-bg{
     width:100%;
+    height:auto;
     display:block;
 }
 
@@ -41,7 +42,6 @@
     position:absolute;
     z-index:2;
     font-family:Arial, sans-serif;
-    color:white;
 }
 
 
@@ -52,6 +52,7 @@
 .poster-result-number{
     top:27%;
     left:38%;
+    color:white;
     font-size:52px;
     font-weight:400;
 }
@@ -66,7 +67,7 @@
     left:38%;
     color:#ffe500;
     font-size:30px;
-    font-weight:bold;
+    font-weight:400;
 }
 
 
@@ -77,8 +78,9 @@
 .poster-programme{
     top:42%;
     left:38%;
+    color:white;
     font-size:34px;
-    font-weight:bold;
+    font-weight:400;
     line-height:1.05;
     max-width:55%;
 }
@@ -90,26 +92,26 @@
 
 .poster-winner{
     left:45%;
-    text-align:left;
     width:50%;
+    text-align:left;
 }
 
 
-/* First */
+/* FIRST */
 
 .winner-1{
     top:55%;
 }
 
 
-/* Second */
+/* SECOND */
 
 .winner-2{
     top:65%;
 }
 
 
-/* Third */
+/* THIRD */
 
 .winner-3{
     top:75%;
@@ -121,12 +123,9 @@
 ========================= */
 
 .poster-name{
+    color:white;
     font-size:25px;
-
-    /* IMPORTANT:
-       Names are NOT bold */
     font-weight:400 !important;
-
     text-align:left;
     white-space:nowrap;
     line-height:1.1;
@@ -134,19 +133,20 @@
 
 
 /* =========================
-   TEAM NAME
+   TEAM
 ========================= */
 
 .poster-team{
     color:#ffe500;
     font-size:19px;
-    font-weight:400;
+    font-weight:400 !important;
     margin-top:3px;
     line-height:1.15;
+    white-space:nowrap;
 }
 
 
-/* Second prize - second person */
+/* SECOND PERSON */
 
 .second-person{
     margin-top:8px;
@@ -159,24 +159,44 @@
 
 @media(max-width:500px){
 
+    .result-poster{
+        width:96%;
+    }
+
     .poster-result-number{
-        font-size:38px;
+        top:27%;
         left:38%;
+        font-size:38px;
     }
 
     .poster-category{
-        font-size:22px;
+        top:38%;
         left:38%;
+        font-size:22px;
     }
 
     .poster-programme{
-        font-size:25px;
+        top:42%;
         left:38%;
+        font-size:25px;
+        max-width:58%;
     }
 
     .poster-winner{
         left:43%;
         width:54%;
+    }
+
+    .winner-1{
+        top:55%;
+    }
+
+    .winner-2{
+        top:65%;
+    }
+
+    .winner-3{
+        top:75%;
     }
 
     .poster-name{
@@ -202,6 +222,10 @@
 <body>
 
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
 <img src="banner1.jpg"
@@ -210,6 +234,10 @@
 
 </header>
 
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
@@ -226,18 +254,22 @@
 </nav>
 
 
-<section>
+<!-- =========================
+     RESULTS SECTION
+========================= -->
 
+<section>
 
 <h2>🏆 Festival Results</h2>
 
+
+<!-- CATEGORY -->
 
 <label for="category">
 <b>Select Category</b>
 </label>
 
 <br><br>
-
 
 <select id="category">
 
@@ -263,12 +295,13 @@ General
 <br><br>
 
 
+<!-- PROGRAMME -->
+
 <label for="programme">
 <b>Select Programme</b>
 </label>
 
 <br><br>
-
 
 <select id="programme">
 
@@ -283,7 +316,7 @@ Choose Programme
 
 
 <!-- =========================
-     AUTOMATIC RESULT POSTER
+     RESULT POSTER
 ========================= -->
 
 <div id="resultPoster"
@@ -356,10 +389,10 @@ Choose Programme
         </div>
 
 
-        <!-- SECOND PERSON -->
+        <!-- SECOND SECOND-PRIZE WINNER -->
 
         <div
-            class="second-person poster-name"
+            class="poster-name second-person"
             id="posterSecondName2">
         </div>
 
@@ -391,910 +424,644 @@ Choose Programme
 
 </div>
 
-
 </section>
 
 
 <script>
 
-
-/* =========================
+/* =====================================================
    PROGRAMMES
-========================= */
+===================================================== */
 
 const programmes = {
 
-junior: [
+    /* =========================
+       JUNIOR
+    ========================= */
 
-"Memory Test",
-"Story Writing",
-"Essay Malayalam",
-"Pencil Drawing",
-"Water Colour Painting",
-"Spelling Bee Arabic",
-"Spelling Bee English",
-"Caption Writing",
-"Typing Malayalam",
-"Typing Arabic",
-"Hand Writing Malayalam",
-"Hand Writing English",
-"Hand Writing Arabic",
-"Book Test",
+    junior: [
 
-"Mappilappattu",
-"Madh Song",
-"Bhakthi Ganam",
-"Elocution Malayalam",
-"Qira'ath",
-"Story Telling",
+        "Memory Test",
+        "Story Writing",
+        "Essay Malayalam",
+        "Pencil Drawing",
+        "Water Colour Painting",
+        "Spelling Bee Arabic",
+        "Spelling Bee English",
+        "Caption Writing",
+        "Typing Malayalam",
+        "Typing Arabic",
+        "Hand Writing Malayalam",
+        "Hand Writing English",
+        "Hand Writing Arabic",
+        "Book Test",
 
-"Thadrees",
-"Poem Recitation",
-"Adan",
-"Ganitha Keli",
-"Quiz",
-"Swarf Musabaqa",
-"Reading English",
-"Reading Arabic",
-"Hifz"
+        "Mappilappattu",
+        "Madh Song",
+        "Bhakthi Ganam",
+        "Elocution Malayalam",
+        "Qira'ath",
+        "Story Telling",
 
-],
+        "Thadrees",
+        "Poem Recitation",
+        "Adan",
+        "Ganitha Keli",
+        "Quiz",
+        "Swarf Musabaqa",
+        "Reading English",
+        "Reading Arabic",
+        "Hifz"
 
-
-senior: [
-
-"Feature Writing",
-"Story Writing",
-"Essay Malayalam",
-"Pencil Drawing",
-"Slogan Writing",
-"Typing Malayalam",
-"Typing Arabic",
-"Caption Writing",
-"Social Tweet",
-"Poem Making",
-"e-Poster",
-"Book Test",
-"Hand Writing Malayalam",
-"Hand Writing English",
-"Hand Writing Arabic",
-
-"Mappilappattu",
-"Madh Song",
-"Bhakthi Ganam",
-"Elocution Malayalam",
-"Qira'ath",
-
-"Thadrees",
-"Khuthuba",
-"Hadees Musabaqa",
-"Quiz",
-"Ma'ashira"
-
-],
+    ],
 
 
-general: [
+    /* =========================
+       SENIOR
+    ========================= */
 
-"Moulid Recitation",
-"Qaseeda Recitation",
-"Nasheeda",
-"Qawali",
-"Group Song",
+    senior: [
 
-"Mala Recitation",
-"Elocution English",
-"Elocution Arabic",
-"Va'al",
-"Baith Musabaqa",
+        "Feature Writing",
+        "Story Writing",
+        "Essay Malayalam",
+        "Pencil Drawing",
+        "Slogan Writing",
+        "Typing Malayalam",
+        "Typing Arabic",
+        "Caption Writing",
+        "Social Tweet",
+        "Poem Making",
+        "e-Poster",
+        "Book Test",
+        "Hand Writing Malayalam",
+        "Hand Writing English",
+        "Hand Writing Arabic",
 
-"Collage",
-"Calligraphy",
-"Poster Designing",
-"Spot Magazine",
-"AI Poem Making",
-"Logo Making",
-"Documentary",
-"Digital Presentation"
+        "Mappilappattu",
+        "Madh Song",
+        "Bhakthi Ganam",
+        "Elocution Malayalam",
+        "Qira'ath",
 
-]
+        "Thadrees",
+        "Khuthuba",
+        "Hadees Musabaqa",
+        "Quiz",
+        "Ma'ashira"
+
+    ],
+
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    general: [
+
+        "Moulid Recitation",
+        "Qaseeda Recitation",
+        "Nasheeda",
+        "Qawali",
+        "Group Song",
+
+        "Mala Recitation",
+        "Elocution English",
+        "Elocution Arabic",
+        "Va'al",
+        "Baith Musabaqa",
+
+        "Collage",
+        "Calligraphy",
+        "Poster Designing",
+        "Spot Magazine",
+        "AI Poem Making",
+        "Logo Making",
+        "Documentary",
+        "Digital Presentation"
+
+    ]
 
 };
 
 
-/* =========================
+/* =====================================================
    RESULT DATA
-========================= */
+===================================================== */
 
 const resultsData = {
 
 
-/* =========================
+/* =====================================================
    JUNIOR
-========================= */
+===================================================== */
 
 junior: {
 
+    "Memory Test":{
+        firstName:"Ziyad",
+        firstTeam:"Thibreez",
+        secondName:"Khidash",
+        secondTeam:"Sheeraz",
+        thirdName:"Aflah",
+        thirdTeam:"Thibreez"
+    },
 
-"Memory Test":{
-firstName:"Ziyad",
-firstTeam:"Thibreez",
-secondName:"Khidash",
-secondTeam:"Sheeraz",
-thirdName:"Aflah",
-thirdTeam:"Thibreez"
-},
+    "Story Writing":{
+        firstName:"Sahal Kt",
+        firstTeam:"Thibreez",
+        secondName:"Saeed",
+        secondTeam:"Sheeraz",
+        thirdName:"Rabeeh KC",
+        thirdTeam:"Ahvaz"
+    },
 
-"Story Writing":{
-firstName:"Sahal Kt",
-firstTeam:"Thibreez",
-secondName:"Saeed",
-secondTeam:"Sheeraz",
-thirdName:"Rabeeh KC",
-thirdTeam:"Ahvaz"
-},
+    "Essay Malayalam":{
+        firstName:"Saeed VP",
+        firstTeam:"Sheeraz",
+        secondName:"Aflah",
+        secondTeam:"Thibreez",
+        thirdName:"Rabeeh KC",
+        thirdTeam:"Ahvaz"
+    },
 
-"Essay Malayalam":{
-firstName:"Saeed VP",
-firstTeam:"Sheeraz",
-secondName:"Aflah",
-secondTeam:"Thibreez",
-thirdName:"Rabeeh KC",
-thirdTeam:"Ahvaz"
-},
+    "Pencil Drawing":{
+        firstName:"Shahul Hameed",
+        firstTeam:"Ahvaz",
+        secondName:"Ravahath",
+        secondTeam:"Thibreez",
+        thirdName:"Aflah",
+        thirdTeam:"Thibreez"
+    },
 
-"Pencil Drawing":{
-firstName:"Shahul Hameed",
-firstTeam:"Ahvaz",
-secondName:"Ravahath",
-secondTeam:"Thibreez",
-thirdName:"Aflah",
-thirdTeam:"Thibreez"
-},
+    "Water Colour Painting":{
+        firstName:"Shahul Hameed",
+        firstTeam:"Ahvaz",
+        secondName:"Ravahath",
+        secondTeam:"Thibreez",
+        thirdName:"Jazlan",
+        thirdTeam:"Sheeraz"
+    },
 
-"Water Colour Painting":{
-firstName:"Shahul Hameed",
-firstTeam:"Ahvaz",
-secondName:"Ravahath",
-secondTeam:"Thibreez",
-thirdName:"Jazlan",
-thirdTeam:"Sheeraz"
-},
+    "Spelling Bee Arabic":{
+        firstName:"Khidash",
+        firstTeam:"Sheeraz",
+        secondName:"Zameel",
+        secondTeam:"Ahvaz",
+        thirdName:"Aflah",
+        thirdTeam:"Thibreez"
+    },
 
-"Spelling Bee Arabic":{
-firstName:"Khidash",
-firstTeam:"Sheeraz",
-secondName:"Zameel",
-secondTeam:"Ahvaz",
-thirdName:"Aflah",
-thirdTeam:"Thibreez"
-},
+    "Spelling Bee English":{
+        firstName:"Ziyad",
+        firstTeam:"Thibreez",
+        secondName:"Anfal",
+        secondTeam:"Sheeraz",
+        thirdName:"Shahul Hameed",
+        thirdTeam:"Ahvaz"
+    },
 
-"Spelling Bee English":{
-firstName:"Ziyad",
-firstTeam:"Thibreez",
-secondName:"Anfal",
-secondTeam:"Sheeraz",
-thirdName:"Shahul Hameed",
-thirdTeam:"Ahvaz"
-},
+    "Caption Writing":{
+        firstName:"Saeed VP",
+        firstTeam:"Sheeraz",
+        secondName:"Zameel",
+        secondTeam:"Ahvaz",
+        thirdName:"Aflah",
+        thirdTeam:"Thibreez"
+    },
 
-"Caption Writing":{
-firstName:"Saeed VP",
-firstTeam:"Sheeraz",
-secondName:"Zameel",
-secondTeam:"Ahvaz",
-thirdName:"Aflah",
-thirdTeam:"Thibreez"
-},
+    "Typing Malayalam":{
+        firstName:"Janish",
+        firstTeam:"Ahvaz",
+        secondName:"Jazlan",
+        secondTeam:"Sheeraz",
+        secondName2:"Sayyid Muhassir",
+        secondTeam2:"Thibreez"
+    },
 
-"Typing Malayalam":{
-firstName:"Janish",
-firstTeam:"Ahvaz",
-secondName:"Jazlan",
-secondTeam:"Sheeraz",
-thirdName:"Sayyid Muhassir",
-thirdTeam:"Thibreez"
-},
+    "Typing Arabic":{
+        firstName:"Janish",
+        firstTeam:"Ahvaz",
+        secondName:"Khidash",
+        secondTeam:"Sheeraz",
+        thirdName:"Sayyid Muhassir",
+        thirdTeam:"Thibreez"
+    },
 
-"Typing Arabic":{
-firstName:"Janish",
-firstTeam:"Ahvaz",
-secondName:"Khidash",
-secondTeam:"Sheeraz",
-thirdName:"Sayyid Muhassir",
-thirdTeam:"Thibreez"
-},
+    "Hand Writing Malayalam":{
+        firstName:"Aflah",
+        firstTeam:"Thibreez",
+        secondName:"Saeed VP",
+        secondTeam:"Sheeraz",
+        thirdName:"Jawad",
+        thirdTeam:"Ahvaz"
+    },
 
-"Hand Writing Malayalam":{
-firstName:"Aflah",
-firstTeam:"Thibreez",
-secondName:"Saeed VP",
-secondTeam:"Sheeraz",
-thirdName:"Jawad",
-thirdTeam:"Ahvaz"
-},
+    "Hand Writing English":{
+        firstName:"Ziyad",
+        firstTeam:"Thibreez",
+        secondName:"Anfal",
+        secondTeam:"Sheeraz",
+        thirdName:"Janish",
+        thirdTeam:"Ahvaz"
+    },
 
-"Hand Writing English":{
-firstName:"Ziyad",
-firstTeam:"Thibreez",
-secondName:"Anfal",
-secondTeam:"Sheeraz",
-thirdName:"Janish",
-thirdTeam:"Ahvaz"
-},
+    "Hand Writing Arabic":{
+        firstName:"Ravahath",
+        firstTeam:"Thibreez",
+        secondName:"Jazlan",
+        secondTeam:"Sheeraz",
+        thirdName:"Shahul Hameed",
+        thirdTeam:"Ahvaz"
+    },
 
-"Hand Writing Arabic":{
-firstName:"Ravahath",
-firstTeam:"Thibreez",
-secondName:"Jazlan",
-secondTeam:"Sheeraz",
-thirdName:"Shahul Hameed",
-thirdTeam:"Ahvaz"
-},
+    "Book Test":{
+        firstName:"Rabeeh KC",
+        firstTeam:"Ahvaz",
+        secondName:"Saeed VP",
+        secondTeam:"Sheeraz",
+        thirdName:"Sahal KT",
+        thirdTeam:"Thibreez"
+    },
 
-"Book Test":{
-firstName:"Rabeeh KC",
-firstTeam:"Ahvaz",
-secondName:"Saeed VP",
-secondTeam:"Sheeraz",
-thirdName:"Sahal KT",
-thirdTeam:"Thibreez"
-},
+    "Mappilappattu":{
+        firstName:"Zameel",
+        firstTeam:"Ahvaz",
+        secondName:"Anfal",
+        secondTeam:"Sheeraz",
+        thirdName:"Ravahath",
+        thirdTeam:"Thibreez"
+    },
 
+    "Madh Song":{
+        firstName:"Anfal",
+        firstTeam:"Sheeraz",
+        secondName:"Zameel",
+        secondTeam:"Ahvaz",
+        thirdName:"Ravahath",
+        thirdTeam:"Thibreez"
+    },
 
-"Mappilappattu":{
-firstName:"Zameel",
-firstTeam:"Ahvaz",
-secondName:"Anfal",
-secondTeam:"Sheeraz",
-thirdName:"Ravahath",
-thirdTeam:"Thibreez"
-},
+    "Bhakthi Ganam":{
+        firstName:"Ravahath",
+        firstTeam:"Thibreez",
+        secondName:"Anfal",
+        secondTeam:"Sheeraz",
+        thirdName:"Rabeeh KC",
+        thirdTeam:"Ahvaz"
+    },
 
-"Madh Song":{
-firstName:"Anfal",
-firstTeam:"Sheeraz",
-secondName:"Zameel",
-secondTeam:"Ahvaz",
-thirdName:"Ravahath",
-thirdTeam:"Thibreez"
-},
+    "Elocution Malayalam":{
+        firstName:"Khidash",
+        firstTeam:"Sheeraz",
+        secondName:"Janish",
+        secondTeam:"Ahvaz",
+        thirdName:"Sayyid Muhassir",
+        thirdTeam:"Thibreez"
+    },
 
-"Bhakthi Ganam":{
-firstName:"Ravahath",
-firstTeam:"Thibreez",
-secondName:"Anfal",
-secondTeam:"Sheeraz",
-thirdName:"Rabeeh KC",
-thirdTeam:"Ahvaz"
-},
+    "Qira'ath":{
+        firstName:"Ziyad",
+        firstTeam:"Thibreez",
+        secondName:"Rabeeh",
+        secondTeam:"Ahvaz",
+        thirdName:"Munawwar",
+        thirdTeam:"Sheeraz"
+    },
 
-"Elocution Malayalam":{
-firstName:"Khidash",
-firstTeam:"Sheeraz",
-secondName:"Janish",
-secondTeam:"Ahvaz",
-thirdName:"Sayyid Muhassir",
-thirdTeam:"Thibreez"
-},
+    "Story Telling":{
+        firstName:"Jawad",
+        firstTeam:"Ahvaz",
+        secondName:"Sayyid Muhassir",
+        secondTeam:"Thibreez",
+        thirdName:"Anfal",
+        thirdTeam:"Sheeraz"
+    },
 
-"Qira'ath":{
-firstName:"Ziyad",
-firstTeam:"Thibreez",
-secondName:"Rabeeh",
-secondTeam:"Ahvaz",
-thirdName:"Munawwar",
-thirdTeam:"Sheeraz"
-},
+    "Thadrees":{
+        firstName:"Khidash",
+        firstTeam:"Sheeraz",
+        secondName:"Janish",
+        secondTeam:"Ahvaz",
+        thirdName:"Sayyid Muhassir",
+        thirdTeam:"Thibreez"
+    },
 
-"Story Telling":{
-firstName:"Jawad",
-firstTeam:"Ahvaz",
-secondName:"Sayyid Muhassir",
-secondTeam:"Thibreez",
-thirdName:"Anfal",
-thirdTeam:"Sheeraz"
-},
+    "Poem Recitation":{
+        firstName:"Sahal KT",
+        firstTeam:"Thibreez",
+        secondName:"Jawad",
+        secondTeam:"Ahvaz",
+        thirdName:"Khidash",
+        thirdTeam:"Sheeraz"
+    },
 
-"Thadrees":{
-firstName:"Khidash",
-firstTeam:"Sheeraz",
-secondName:"Janish",
-secondTeam:"Ahvaz",
-thirdName:"Sayyid Muhassir",
-thirdTeam:"Thibreez"
-},
+    "Adan":{
+        firstName:"Ravahath",
+        firstTeam:"Thibreez",
+        secondName:"Munawwir",
+        secondTeam:"Sheeraz",
+        thirdName:"Zameel",
+        thirdTeam:"Ahvaz"
+    },
 
-"Poem Recitation":{
-firstName:"Sahal KT",
-firstTeam:"Thibreez",
-secondName:"Jawad",
-secondTeam:"Ahvaz",
-thirdName:"Khidash",
-thirdTeam:"Sheeraz"
-},
+    "Ganitha Keli":{
+        firstName:"Muhammad Saeed",
+        firstTeam:"Sheeraz",
+        secondName:"Muhammad Jazlan",
+        secondTeam:"Sheeraz",
+        thirdName:"Muhammad Janish",
+        thirdTeam:"Ahvaz"
+    },
 
-"Adan":{
-firstName:"Ravahath",
-firstTeam:"Thibreez",
-secondName:"Munawwir",
-secondTeam:"Sheeraz",
-thirdName:"Zameel",
-thirdTeam:"Ahvaz"
-},
+    "Quiz":{
+        firstName:"Muhammad Rabeeh",
+        firstTeam:"Ahvaz",
+        secondName:"Muhammad Ziyad",
+        secondTeam:"Thibreez",
+        thirdName:"Muhammad Zameel",
+        thirdTeam:"Ahvaz"
+    },
 
-"Ganitha Keli":{
-firstName:"Muhammad Saeed",
-firstTeam:"Sheeraz",
-secondName:"Muhammad Jazlan",
-secondTeam:"Sheeraz",
-thirdName:"Muhammad Janish",
-thirdTeam:"Ahvaz"
-},
+    "Swarf Musabaqa":{
+        firstName:"Sayyid Muhassir",
+        firstTeam:"Thibreez",
+        secondName:"Saeed",
+        secondTeam:"Sheeraz",
+        thirdName:"Zameel",
+        thirdTeam:"Ahvaz"
+    },
 
-"Quiz":{
-firstName:"Muhammad Rabeeh",
-firstTeam:"Ahvaz",
-secondName:"Muhammad Ziyad",
-secondTeam:"Thibreez",
-thirdName:"Muhammad Zameel",
-thirdTeam:"Ahvaz"
-},
+    "Reading English":{
+        firstName:"Ziyad",
+        firstTeam:"Thibreez",
+        secondName:"Munawwar",
+        secondTeam:"Sheeraz",
+        thirdName:"Rabeeh KC",
+        thirdTeam:"Ahvaz"
+    },
 
-"Swarf Musabaqa":{
-firstName:"Sayyid Muhassir",
-firstTeam:"Thibreez",
-secondName:"Saeed",
-secondTeam:"Sheeraz",
-thirdName:"Zameel",
-thirdTeam:"Ahvaz"
-},
+    "Reading Arabic":{
+        firstName:"Jawad",
+        firstTeam:"Ahvaz",
+        secondName:"Munawwar",
+        secondTeam:"Sheeraz",
+        thirdName:"Ahflahg",
+        thirdTeam:"Thibreez"
+    },
 
-"Reading English":{
-firstName:"Ziyad",
-firstTeam:"Thibreez",
-secondName:"Munawwar",
-secondTeam:"Sheeraz",
-thirdName:"Rabeeh KC",
-thirdTeam:"Ahvaz"
-},
-
-"Reading Arabic":{
-firstName:"Jawad",
-firstTeam:"Ahvaz",
-secondName:"Munawwar",
-secondTeam:"Sheeraz",
-thirdName:"Ahflahg",
-thirdTeam:"Thibreez"
-},
-
-"Hifz":{
-firstName:"Munawwir",
-firstTeam:"Sheeraz",
-secondName:"Ziyad",
-secondTeam:"Thibreez",
-thirdName:"Shahul Hameed",
-thirdTeam:"Ahvaz"
-}
+    "Hifz":{
+        firstName:"Munawwir",
+        firstTeam:"Sheeraz",
+        secondName:"Ziyad",
+        secondTeam:"Thibreez",
+        thirdName:"Shahul Hameed",
+        thirdTeam:"Ahvaz"
+    }
 
 },
 
 
-/* =========================
+/* =====================================================
    SENIOR
-========================= */
+===================================================== */
 
 senior: {
 
+    "Feature Writing":{
+        firstName:"Irshadudheen",
+        firstTeam:"Sheeraz",
+        secondName:"Thajudheen",
+        secondTeam:"Thibreez",
+        thirdName:"Rabeeh CK",
+        thirdTeam:"Thibreez"
+    },
 
-"Feature Writing":{
-firstName:"Irshadudheen",
-firstTeam:"Sheeraz",
-secondName:"Thajudheen",
-secondTeam:"Thibreez",
-thirdName:"Rabeeh CK",
-thirdTeam:"Thibreez"
-},
+    "Story Writing":{
+        firstName:"Miqda",
+        firstTeam:"Sheeraz",
+        secondName:"Midlaj",
+        secondTeam:"Sheeraz",
+        thirdName:"Rabeeh CK",
+        thirdTeam:"Thibreez"
+    },
 
-"Story Writing":{
-firstName:"Miqda",
-firstTeam:"Sheeraz",
-secondName:"Midlaj",
-secondTeam:"Sheeraz",
-thirdName:"Rabeeh CK",
-thirdTeam:"Thibreez"
-},
+    "Essay Malayalam":{
+        firstName:"Miqdad",
+        firstTeam:"Sheeraz",
+        secondName:"Irshadudheen",
+        secondTeam:"Sheeraz",
+        thirdName:"Sahal V",
+        thirdTeam:"Ahvaz"
+    },
 
-"Essay Malayalam":{
-firstName:"Miqdad",
-firstTeam:"Sheeraz",
-secondName:"Irshadudheen",
-secondTeam:"Sheeraz",
-thirdName:"Sahal V",
-thirdTeam:"Ahvaz"
-},
+    "Pencil Drawing":{
+        firstName:"Abdul Samad",
+        firstTeam:"Ahvaz",
+        secondName:"Umair",
+        secondTeam:"Sheeraz",
+        thirdName:"Rabeeh CK",
+        thirdTeam:"Thibreez"
+    },
 
-"Pencil Drawing":{
-firstName:"Abdul Samad",
-firstTeam:"Ahvaz",
-secondName:"Umair",
-secondTeam:"Sheeraz",
-thirdName:"Rabeeh CK",
-thirdTeam:"Thibreez"
-},
+    "Slogan Writing":{
+        firstName:"Miqdad",
+        firstTeam:"Sheer4z",
+        secondName:"Sinan C",
+        secondTeam:"Sheeraz",
+        thirdName:"Sa'ad BT",
+        thirdTeam:"Ahvaz"
+    },
 
-"Slogan Writing":{
-firstName:"Miqdad",
-firstTeam:"Sheer4z",
-secondName:"Sinan C",
-secondTeam:"Sheeraz",
-thirdName:"Sa'ad BT",
-thirdTeam:"Ahvaz"
-},
+    "Typing Malayalam":{
+        firstName:"Rabeeh PT",
+        firstTeam:"Ahvaz",
+        secondName:"Shammas K",
+        secondTeam:"Thibreez",
+        thirdName:"Midlaj",
+        thirdTeam:"Sheeraz"
+    },
 
-"Typing Malayalam":{
-firstName:"Rabeeh PT",
-firstTeam:"Ahvaz",
-secondName:"Shammas K",
-secondTeam:"Thibreez",
-thirdName:"Midlaj",
-thirdTeam:"Sheeraz"
-},
+    "Typing Arabic":{
+        firstName:"Rabeeh Pt",
+        firstTeam:"Ahvaz",
+        secondName:"Midlaj",
+        secondTeam:"Sheeraz",
+        thirdName:"Shammas K",
+        thirdTeam:"Thibreez"
+    },
 
-"Typing Arabic":{
-firstName:"Rabeeh Pt",
-firstTeam:"Ahvaz",
-secondName:"Midlaj",
-secondTeam:"Sheeraz",
-thirdName:"Shammas K",
-thirdTeam:"Thibreez"
-},
+    "Caption Writing":{
+        firstName:"Rabeeh PT",
+        firstTeam:"Ahvaz",
+        secondName:"Sa'ad V",
+        secondTeam:"Thibreez",
+        thirdName:"Umair",
+        thirdTeam:"Sheeraz"
+    },
 
-"Caption Writing":{
-firstName:"Rabeeh PT",
-firstTeam:"Ahvaz",
-secondName:"Sa'ad V",
-secondTeam:"Thibreez",
-thirdName:"Umair",
-thirdTeam:"Sheeraz"
-},
+    "Social Tweet":{
+        firstName:"Sahal V",
+        firstTeam:"Ahvaz",
+        secondName:"Shammas UP",
+        secondTeam:"Ahvaz",
+        thirdName:"Miqdad",
+        thirdTeam:"Sheeraz"
+    },
 
-"Social Tweet":{
-firstName:"Sahal V",
-firstTeam:"Ahvaz",
-secondName:"Shammas UP",
-secondTeam:"Ahvaz",
-thirdName:"Miqdad",
-thirdTeam:"Sheeraz"
-},
+    "Poem Making":{
+        firstName:"Sinan C",
+        firstTeam:"Sheeraz",
+        secondName:"Sahal V",
+        secondTeam:"Ahvaz",
+        thirdName:"SA'ad BT",
+        thirdTeam:"Ahvaz"
+    },
 
-"Poem Making":{
-firstName:"Sinan C",
-firstTeam:"Sheeraz",
-secondName:"Sahal V",
-secondTeam:"Ahvaz",
-thirdName:"SA'ad BT",
-thirdTeam:"Ahvaz"
-},
+    "e-Poster":{
+        firstName:"Saeed KV",
+        firstTeam:"Thibreez",
+        secondName:"Abdul Samad",
+        secondTeam:"Ahvaz",
+        thirdName:"Midlaj",
+        thirdTeam:"Sheeraz"
+    },
 
-"e-Poster":{
-firstName:"Saeed KV",
-firstTeam:"Thibreez",
-secondName:"Abdul Samad",
-secondTeam:"Ahvaz",
-thirdName:"Midlaj",
-thirdTeam:"Sheeraz"
-},
+    "Book Test":{
+        firstName:"Shammas UP",
+        firstTeam:"Ahvaz",
+        secondName:"Saeed KV",
+        secondTeam:"Thibreez",
+        thirdName:"Midlaj",
+        thirdTeam:"Sheeraz"
+    },
 
-"Book Test":{
-firstName:"Shammas UP",
-firstTeam:"Ahvaz",
-secondName:"Saeed KV",
-secondTeam:"Thibreez",
-thirdName:"Midlaj",
-thirdTeam:"Sheeraz"
-},
+    "Hand Writing Malayalam":{
+        firstName:"Rabeeh PT",
+        firstTeam:"Ahvaz",
+        secondName:"Sa'ad BT",
+        secondTeam:"Ahvaz",
+        thirdName:"Sinan C",
+        thirdTeam:"Sheeraz"
+    },
 
-"Hand Writing Malayalam":{
-firstName:"Rabeeh PT",
-firstTeam:"Ahvaz",
-secondName:"Sa'ad BT",
-secondTeam:"Ahvaz",
-thirdName:"Sinan C",
-thirdTeam:"Sheeraz"
-},
+    "Hand Writing English":{
+        firstName:"Rabeeh CK",
+        firstTeam:"Thibreez",
+        secondName:"Hasbin Sha",
+        secondTeam:"Ahvaz",
+        thirdName:"Rabeeh PT",
+        thirdTeam:"Ahvaz"
+    },
 
-"Hand Writing English":{
-firstName:"Rabeeh CK",
-firstTeam:"Thibreez",
-secondName:"Hasbin Sha",
-secondTeam:"Ahvaz",
-thirdName:"Rabeeh PT",
-thirdTeam:"Ahvaz"
-},
+    "Hand Writing Arabic":{
+        firstName:"Sa'ad V",
+        firstTeam:"Thibreez",
+        secondName:"Rabeeh CK",
+        secondTeam:"Thibreez",
+        thirdName:"Sinan C",
+        thirdTeam:"Sheeraz"
+    },
 
-"Hand Writing Arabic":{
-firstName:"Sa'ad V",
-firstTeam:"Thibreez",
-secondName:"Rabeeh CK",
-secondTeam:"Thibreez",
-thirdName:"Sinan C",
-thirdTeam:"Sheeraz"
-},
+    "Mappilappattu":{
+        firstName:"Hasbin Sha",
+        firstTeam:"Ahvaz",
+        secondName:"Abdul Noor",
+        secondTeam:"Sheeraz",
+        thirdName:"Sahai TK",
+        thirdTeam:"Thibreez"
+    },
 
+    "Madh Song":{
+        firstName:"Sahal TK",
+        firstTeam:"Thibreez",
+        secondName:"Abdul Samad",
+        secondTeam:"Ahvaz",
+        thirdName:"Abdul Noor",
+        thirdTeam:"Sheeraz"
+    },
 
-"Mappilappattu":{
-firstName:"Hasbin Sha",
-firstTeam:"Ahvaz",
-secondName:"Abdul Noor",
-secondTeam:"Sheeraz",
-thirdName:"Sahai TK",
-thirdTeam:"Thibreez"
-},
+    "Bhakthi Ganam":{
+        firstName:"Hasbin Sha",
+        firstTeam:"Ahvaz",
+        secondName:"Sahal TK",
+        secondTeam:"Thibreez",
+        thirdName:"Abdul Noor",
+        thirdTeam:"Sheerraz"
+    },
 
-"Madh Song":{
-firstName:"Sahal TK",
-firstTeam:"Thibreez",
-secondName:"Abdul Samad",
-secondTeam:"Ahvaz",
-thirdName:"Abdul Noor",
-thirdTeam:"Sheeraz"
-},
+    "Elocution Malayalam":{
+        firstName:"Saeed KV",
+        firstTeam:"Thibreez",
+        secondName:"Sa'ad BT",
+        secondTeam:"Ahvaz",
+        thirdName:"Irshadudheen",
+        thirdTeam:"Sheeraz"
+    },
 
-"Bhakthi Ganam":{
-firstName:"Hasbin Sha",
-firstTeam:"Ahvaz",
-secondName:"Sahal TK",
-secondTeam:"Thibreez",
-thirdName:"Abdul Noor",
-thirdTeam:"Sheerraz"
-},
+    "Qira'ath":{
+        firstName:"Hasbin Sha",
+        firstTeam:"Ahvaz",
+        secondName:"Abdul Noor",
+        secondTeam:"Sheeraz",
+        thirdName:"Sa'ad V",
+        thirdTeam:"Thibreez"
+    },
 
-"Elocution Malayalam":{
-firstName:"Saeed KV",
-firstTeam:"Thibreez",
-secondName:"Sa'ad BT",
-secondTeam:"Ahvaz",
-thirdName:"Irshadudheen",
-thirdTeam:"Sheeraz"
-},
+    "Thadrees":{
+        firstName:"Saeed Kv",
+        firstTeam:"Thibreez",
+        secondName:"Siraj",
+        secondTeam:"Sheeraz",
+        thirdName:"Sa'ad",
+        thirdTeam:"Ahvaz"
+    },
 
-"Qira'ath":{
-firstName:"Hasbin Sha",
-firstTeam:"Ahvaz",
-secondName:"Abdul Noor",
-secondTeam:"Sheeraz",
-thirdName:"Sa'ad V",
-thirdTeam:"Thibreez"
-},
+    "Khuthuba":{
+        firstName:"Saeed KV",
+        firstTeam:"Thibreez",
+        secondName:"Hasbin Sha",
+        secondTeam:"Ahvaz",
+        thirdName:"Siraj",
+        thirdTeam:"Sheeraz"
+    },
 
-"Thadrees":{
-firstName:"Saeed Kv",
-firstTeam:"Thibreez",
-secondName:"Siraj",
-secondTeam:"Sheeraz",
-thirdName:"Sa'ad",
-thirdTeam:"Ahvaz"
-},
+    "Hadees Musabaqa":{
+        firstName:"Sinan C",
+        firstTeam:"Sheeraz",
+        secondName:"Saeed KV",
+        secondTeam:"Thibreez",
+        thirdName:"Hasbin Sha",
+        thirdTeam:"Ahvaz"
+    },
 
-"Khuthuba":{
-firstName:"Saeed KV",
-firstTeam:"Thibreez",
-secondName:"Hasbin Sha",
-secondTeam:"Ahvaz",
-thirdName:"Siraj",
-thirdTeam:"Sheeraz"
-},
+    "Quiz":{
+        firstName:"Saeed KV",
+        firstTeam:"Thibreez",
+        secondName:"Midlaj",
+        secondTeam:"Sheeraz",
+        thirdName:"Sa'ad V",
+        thirdTeam:"Thibreez"
+    },
 
-"Hadees Musabaqa":{
-firstName:"Sinan C",
-firstTeam:"Sheeraz",
-secondName:"Saeed KV",
-secondTeam:"Thibreez",
-thirdName:"Hasbin Sha",
-thirdTeam:"Ahvaz"
-},
-
-"Quiz":{
-firstName:"Saeed KV",
-firstTeam:"Thibreez",
-secondName:"Midlaj",
-secondTeam:"Sheeraz",
-thirdName:"Sa'ad V",
-thirdTeam:"Thibreez"
-},
-
-"Ma'ashira":{
-firstName:"Abdul Samad",
-firstTeam:"Ahvaz",
-secondName:"Sahal TK",
-secondTeam:"Thibreez",
-thirdName:"Abdul Noor",
-thirdTeam:"Sheeraz"
-}
+    "Ma'ashira":{
+        firstName:"Abdul Samad",
+        firstTeam:"Ahvaz",
+        secondName:"Sahal TK",
+        secondTeam:"Thibreez",
+        thirdName:"Abdul Noor",
+        thirdTeam:"Sheeraz"
+    }
 
 },
 
 
-/* =========================
+/* =====================================================
    GENERAL
-========================= */
+===================================================== */
 
 general: {
 
-
-"Moulid Recitation":{
-firstName:"Abdul Samad",
-firstTeam:"Ahvaz",
-secondName:"Abdul Noor",
-secondTeam:"Sheeraz",
-thirdName:"Sahal TK",
-thirdTeam:"Thibreez"
-},
-
-"Qaseeda Recitation":{
-firstName:"Abdul SAmad",
-firstTeam:"Ahvaz",
-secondName:"Sahal TK",
-secondTeam:"Thibreez",
-thirdName:"Abdul Noor",
-thirdTeam:"Sheeraz"
-},
-
-"Nasheeda":{
-firstName:"Abdul Samad",
-firstTeam:"Ahvaz",
-secondName:"Sahal TK",
-secondTeam:"Thibreez",
-thirdName:"Abdul Noor",
-thirdTeam:"Sheeraz"
-},
-
-"Qawali":{
-firstName:"Abdul Samad",
-firstTeam:"Ahvaz",
-secondName:"Sahal TK",
-secondTeam:"Thibreez",
-thirdName:"Abdul Noor",
-thirdTeam:"Sheeraz"
-},
-
-"Group Song":{
-firstName:"Sahal TK",
-firstTeam:"Thibreez",
-secondName:"Abdul Noor",
-secondTeam:"Sheeraz",
-thirdName:"Abdul Samad",
-thirdTeam:"Ahvas"
-},
-
-"Mala Recitation":{
-firstName:"Abdul Samad",
-firstTeam:"Ahvaz",
-secondName:"Sahal Tk",
-secondTeam:"Thibreez",
-thirdName:"Abdul Noor",
-thirdTeam:"Sheeraz"
-},
-
-"Elocution English":{
-firstName:"Rabeeh Ck",
-firstTeam:"Thibreez",
-secondName:"Sa'ad BT",
-secondTeam:"Ahvaz",
-thirdName:"Miqdad KV",
-thirdTeam:"Sheeraz"
-},
-
-"Elocution Arabic":{
-firstName:"Siraj",
-firstTeam:"Sheeraz",
-secondName:"Sa'ad V",
-secondTeam:"Thibreez",
-thirdName:"Abdul Samad",
-thirdTeam:"Ahvaz"
-},
-
-"Va'al":{
-firstName:"Saeed KV",
-firstTeam:"Thibreez",
-secondName:"Miqdad",
-secondTeam:"Sheeraz",
-thirdName:"Hasbin Sha",
-thirdTeam:"Ahvaz"
-},
-
-"Baith Musabaqa":{
-firstName:"Sahal TK",
-firstTeam:"Thibreez",
-secondName:"Abdul Samad",
-secondTeam:"Ahvaz",
-thirdName:"Siraj",
-thirdTeam:"Sheeraz"
-},
-
-"Collage":{
-firstName:"Abdul SAmad",
-firstTeam:"Ahvaz",
-secondName:"Saeed KV",
-secondTeam:"Thibreez",
-thirdName:"Midlaj",
-thirdTeam:"Sheeraz"
-},
-
-"Calligraphy":{
-firstName:"Umair",
-firstTeam:"Shneeraz",
-secondName:"Rabeeh CK",
-secondTeam:"Thibreez",
-thirdName:"Shahul Hameed",
-thirdTeam:"Ahvaz"
-},
-
-"Poster Designing":{
-firstName:"Abdul Samad",
-firstTeam:"Ahvaz",
-secondName:"Ravahath",
-secondTeam:"Thibreez",
-thirdName:"Umair",
-thirdTeam:"Sheeraz"
-},
-
-"Spot Magazine":{
-firstName:"Saeed",
-firstTeam:"Thibreez",
-secondName:"Abdul Samad",
-secondTeam:"Ahvaz",
-thirdName:"Midlaj",
-thirdTeam:"Sheeraz"
-},
-
-"AI Poem Making":{
-firstName:"Miqdad",
-firstTeam:"Sheeraz",
-secondName:"Thajudheen",
-secondTeam:"Thibreez",
-thirdName:"SAhal V",
-thirdTeam:"Ahvaz"
-},
-
-"Logo Making":{
-firstName:"Saeed Kv",
-firstTeam:"Thibreez",
-secondName:"Abdul Samad",
-secondTeam:"Ahvaz",
-thirdName:"Midlaj",
-thirdTeam:"Sheeraz"
-},
-
-"Documentary":{
-firstName:"Abdul Samad",
-firstTeam:"Ahvaz",
-secondName:"Saeed",
-secondTeam:"Thibreez",
-thirdName:"",
-thirdTeam:""
-}
-
-}
-
-};
-
-
-/* =========================
-   ELEMENTS
-========================= */
-
-const category =
-document.getElementById("category");
-
-const programme =
-document.getElementById("programme");
-
-const resultPoster =
-document.getElementById("resultPoster");
-
-const posterResultNumber =
-document.getElementById("posterResultNumber");
-
-const posterCategory =
-document.getElementById("posterCategory");
-
-const posterProgramme =
-document.getElementById("posterProgramme");
-
-const posterFirstName =
-document.getElementById("posterFirstName");
-
-const posterFirstTeam =
-document.getElementById("posterFirstTeam");
-
-const posterSecondName =
-document.getElementById("posterSecondName");
-
-const posterSecondTeam =
-document.getElementById("posterSecondTeam");
-
-const posterSecondName2 =
-document.getElementById("posterSecondName2");
-
-const posterSecondTeam2 =
-document.getElementById("posterSecondTeam2");
-
-const posterThirdName =
-document.getElementById("posterThirdName");
-
-const posterThirdTeam =
-document.getElementById("posterThirdTeam");
-
-
-/* =========================
-   CATEGORY CHANGE
-========================= */
-
-category.addEventListener("change", function(){
-
-    programme.innerHTML =
-    '<option value="">Choose Programme</option>';
-
-    resultPoster.style.display = "none";
-
-
-    if(this.value === ""){
-        return;
-    }
-
-
-    programmes[this.value].forEach(function(item){
-
-        const option =
-        document.createElement("option");
-
-        option.value = item;
-
-        option.textContent = item;
-
-        programme.appendChild(option);
-
-    });
-
-});
-
-
-/* =========================
-   PROGRAMME CHANGE
-========================= */
-
-programme.addEventListener("change", function(){
-
-    if(this.value === ""){
-
-        resultPoster.style.display = "none";
-
-        return;
-
-    }
-
-
-    const categoryValue =
-    category.value;
-
-    const programmeValue =
-    this.value;
-
-
-    /* =========================
-       GET RESULT
-    ========================= */
-
-    const result =
-    resultsData[categoryValue]?.[programmeValue];
-
-
-    /* =========================
-       RESULT NUMBER
-    ========================= */
-
-    const programmeIndex =
-    programmes[cat
+    "Moulid Recitation":{
+        firstName:"Abdul Samad",
+        firstTeam:"
