@@ -1064,4 +1064,474 @@ general: {
 
     "Moulid Recitation":{
         firstName:"Abdul Samad",
-        firstTeam:"
+        firstTeam:"Ahvaz",
+        secondName:"Abdul Noor",
+        secondTeam:"Sheeraz",
+        thirdName:"Sahal TK",
+        thirdTeam:"Thibreez"
+    },
+
+    "Qaseeda Recitation":{
+        firstName:"Abdul SAmad",
+        firstTeam:"Ahvaz",
+        secondName:"Sahal TK",
+        secondTeam:"Thibreez",
+        thirdName:"Abdul Noor",
+        thirdTeam:"Sheeraz"
+    },
+
+    "Nasheeda":{
+        firstName:"Abdul Samad",
+        firstTeam:"Ahvaz",
+        secondName:"Sahal TK",
+        secondTeam:"Thibreez",
+        thirdName:"Abdul Noor",
+        thirdTeam:"Sheeraz"
+    },
+
+    "Qawali":{
+        firstName:"Abdul Samad",
+        firstTeam:"Ahvaz",
+        secondName:"Sahal TK",
+        secondTeam:"Thibreez",
+        thirdName:"Abdul Noor",
+        thirdTeam:"Sheeraz"
+    },
+
+    "Group Song":{
+        firstName:"Sahal TK",
+        firstTeam:"Thibreez",
+        secondName:"Abdul Noor",
+        secondTeam:"Sheeraz",
+        thirdName:"Abdul Samad",
+        thirdTeam:"Ahvas"
+    },
+
+    "Mala Recitation":{
+        firstName:"Abdul Samad",
+        firstTeam:"Ahvaz",
+        secondName:"Sahal Tk",
+        secondTeam:"Thibreez",
+        thirdName:"Abdul Noor",
+        thirdTeam:"Sheeraz"
+    },
+
+    "Elocution English":{
+        firstName:"Rabeeh Ck",
+        firstTeam:"Thibreez",
+        secondName:"Sa'ad BT",
+        secondTeam:"Ahvaz",
+        thirdName:"Miqdad KV",
+        thirdTeam:"Sheeraz"
+    },
+
+    "Elocution Arabic":{
+        firstName:"Siraj",
+        firstTeam:"Sheeraz",
+        secondName:"Sa'ad V",
+        secondTeam:"Thibreez",
+        thirdName:"Abdul Samad",
+        thirdTeam:"Ahvaz"
+    },
+
+    "Va'al":{
+        firstName:"Saeed KV",
+        firstTeam:"Thibreez",
+        secondName:"Miqdad",
+        secondTeam:"Sheeraz",
+        thirdName:"Hasbin Sha",
+        thirdTeam:"Ahvaz"
+    },
+
+    "Baith Musabaqa":{
+        firstName:"Sahal TK",
+        firstTeam:"Thibreez",
+        secondName:"Abdul Samad",
+        secondTeam:"Ahvaz",
+        thirdName:"Siraj",
+        thirdTeam:"Sheeraz"
+    },
+
+    "Collage":{
+        firstName:"Abdul SAmad",
+        firstTeam:"Ahvaz",
+        secondName:"Saeed KV",
+        secondTeam:"Thibreez",
+        thirdName:"Midlaj",
+        thirdTeam:"Sheeraz"
+    },
+
+    "Calligraphy":{
+        firstName:"Umair",
+        firstTeam:"Shneeraz",
+        secondName:"Rabeeh CK",
+        secondTeam:"Thibreez",
+        thirdName:"Shahul Hameed",
+        thirdTeam:"Ahvaz"
+    },
+
+    "Poster Designing":{
+        firstName:"Abdul Samad",
+        firstTeam:"Ahvaz",
+        secondName:"Ravahath",
+        secondTeam:"Thibreez",
+        thirdName:"Umair",
+        thirdTeam:"Sheeraz"
+    },
+
+    "Spot Magazine":{
+        firstName:"Saeed",
+        firstTeam:"Thibreez",
+        secondName:"Abdul Samad",
+        secondTeam:"Ahvaz",
+        thirdName:"Midlaj",
+        thirdTeam:"Sheeraz"
+    },
+
+    "AI Poem Making":{
+        firstName:"Miqdad",
+        firstTeam:"Sheeraz",
+        secondName:"Thajudheen",
+        secondTeam:"Thibreez",
+        thirdName:"SAhal V",
+        thirdTeam:"Ahvaz"
+    },
+
+    "Logo Making":{
+        firstName:"Saeed Kv",
+        firstTeam:"Thibreez",
+        secondName:"Abdul Samad",
+        secondTeam:"Ahvaz",
+        thirdName:"Midlaj",
+        thirdTeam:"Sheeraz"
+    },
+
+    "Documentary":{
+        firstName:"Abdul Samad",
+        firstTeam:"Ahvaz",
+        secondName:"Saeed",
+        secondTeam:"Thibreez",
+        thirdName:"",
+        thirdTeam:""
+    }
+
+}
+
+};
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const category =
+    document.getElementById("category");
+
+const programme =
+    document.getElementById("programme");
+
+const resultPoster =
+    document.getElementById("resultPoster");
+
+const posterResultNumber =
+    document.getElementById("posterResultNumber");
+
+const posterCategory =
+    document.getElementById("posterCategory");
+
+const posterProgramme =
+    document.getElementById("posterProgramme");
+
+const posterFirstName =
+    document.getElementById("posterFirstName");
+
+const posterFirstTeam =
+    document.getElementById("posterFirstTeam");
+
+const posterSecondName =
+    document.getElementById("posterSecondName");
+
+const posterSecondTeam =
+    document.getElementById("posterSecondTeam");
+
+const posterSecondName2 =
+    document.getElementById("posterSecondName2");
+
+const posterSecondTeam2 =
+    document.getElementById("posterSecondTeam2");
+
+const posterThirdName =
+    document.getElementById("posterThirdName");
+
+const posterThirdTeam =
+    document.getElementById("posterThirdTeam");
+
+
+/* =====================================================
+   CLEAR POSTER
+===================================================== */
+
+function clearPoster(){
+
+    posterResultNumber.textContent = "";
+    posterCategory.textContent = "";
+    posterProgramme.textContent = "";
+
+    posterFirstName.textContent = "";
+    posterFirstTeam.textContent = "";
+
+    posterSecondName.textContent = "";
+    posterSecondTeam.textContent = "";
+
+    posterSecondName2.textContent = "";
+    posterSecondTeam2.textContent = "";
+
+    posterThirdName.textContent = "";
+    posterThirdTeam.textContent = "";
+
+    resultPoster.style.display = "none";
+
+}
+
+
+/* =====================================================
+   CATEGORY CHANGE
+===================================================== */
+
+category.addEventListener("change", function(){
+
+    /* Clear old programme list */
+
+    programme.innerHTML =
+        '<option value="">Choose Programme</option>';
+
+    clearPoster();
+
+
+    const selectedCategory =
+        this.value;
+
+
+    /* Nothing selected */
+
+    if(!selectedCategory){
+
+        return;
+
+    }
+
+
+    /* Check programme list */
+
+    const list =
+        programmes[selectedCategory];
+
+
+    if(!Array.isArray(list)){
+
+        console.error(
+            "Programme list not found:",
+            selectedCategory
+        );
+
+        return;
+
+    }
+
+
+    /* Add programmes */
+
+    list.forEach(function(item){
+
+        const option =
+            document.createElement("option");
+
+        option.value = item;
+
+        option.textContent = item;
+
+        programme.appendChild(option);
+
+    });
+
+});
+
+
+/* =====================================================
+   PROGRAMME CHANGE
+===================================================== */
+
+programme.addEventListener("change", function(){
+
+    const programmeValue =
+        this.value;
+
+    /* Nothing selected */
+
+    if(!programmeValue){
+
+        clearPoster();
+
+        return;
+
+    }
+
+
+    const categoryValue =
+        category.value;
+
+
+    /* =========================
+       FIND RESULT
+    ========================= */
+
+    const categoryResults =
+        resultsData[categoryValue] || {};
+
+    const result =
+        categoryResults[programmeValue] || null;
+
+
+    /* =========================
+       RESULT NUMBER
+    ========================= */
+
+    const programmeList =
+        programmes[categoryValue] || [];
+
+    const programmeIndex =
+        programmeList.indexOf(programmeValue);
+
+
+    let resultNumber = "";
+
+    if(programmeIndex >= 0){
+
+        resultNumber =
+            String(programmeIndex + 1)
+            .padStart(2,"0");
+
+    }
+
+
+    posterResultNumber.textContent =
+        resultNumber;
+
+
+    /* =========================
+       CATEGORY
+    ========================= */
+
+    posterCategory.textContent =
+        categoryValue
+            .charAt(0)
+            .toUpperCase()
+        + categoryValue.slice(1);
+
+
+    /* =========================
+       PROGRAMME
+    ========================= */
+
+    posterProgramme.textContent =
+        programmeValue;
+
+
+    /* =========================
+       RESULT PENDING
+    ========================= */
+
+    if(!result){
+
+        posterFirstName.textContent =
+            "Result Pending";
+
+        posterFirstTeam.textContent =
+            "";
+
+        posterSecondName.textContent =
+            "Result Pending";
+
+        posterSecondTeam.textContent =
+            "";
+
+        posterSecondName2.textContent =
+            "";
+
+        posterSecondTeam2.textContent =
+            "";
+
+        posterThirdName.textContent =
+            "Result Pending";
+
+        posterThirdTeam.textContent =
+            "";
+
+        resultPoster.style.display =
+            "block";
+
+        return;
+
+    }
+
+
+    /* =========================
+       FIRST PRIZE
+    ========================= */
+
+    posterFirstName.textContent =
+        result.firstName || "Result Pending";
+
+    posterFirstTeam.textContent =
+        result.firstTeam || "";
+
+
+    /* =========================
+       SECOND PRIZE
+    ========================= */
+
+    posterSecondName.textContent =
+        result.secondName || "Result Pending";
+
+    posterSecondTeam.textContent =
+        result.secondTeam || "";
+
+
+    /* =========================
+       SECOND PRIZE - SECOND WINNER
+    ========================= */
+
+    posterSecondName2.textContent =
+        result.secondName2 || "";
+
+    posterSecondTeam2.textContent =
+        result.secondTeam2 || "";
+
+
+    /* =========================
+       THIRD PRIZE
+    ========================= */
+
+    posterThirdName.textContent =
+        result.thirdName || "Result Pending";
+
+    posterThirdTeam.textContent =
+        result.thirdTeam || "";
+
+
+    /* =========================
+       SHOW POSTER
+    ========================= */
+
+    resultPoster.style.display =
+        "block";
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
