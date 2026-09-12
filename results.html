@@ -45,7 +45,9 @@
 }
 
 
-/* Result number */
+/* =========================
+   RESULT NUMBER
+========================= */
 
 .poster-result-number{
     top:27%;
@@ -55,7 +57,9 @@
 }
 
 
-/* Junior / Senior / General */
+/* =========================
+   CATEGORY
+========================= */
 
 .poster-category{
     top:38%;
@@ -66,7 +70,9 @@
 }
 
 
-/* Programme */
+/* =========================
+   PROGRAMME
+========================= */
 
 .poster-programme{
     top:42%;
@@ -83,8 +89,9 @@
 ========================= */
 
 .poster-winner{
-    left:42%;
+    left:45%;
     text-align:left;
+    width:50%;
 }
 
 
@@ -109,17 +116,31 @@
 }
 
 
+/* =========================
+   WINNER NAME
+========================= */
+
 .poster-name{
     font-size:25px;
-    font-weight:400;
+
+    /* IMPORTANT:
+       Names are NOT bold */
+    font-weight:400 !important;
+
     text-align:left;
-   white-space:nowrap
+    white-space:nowrap;
+    line-height:1.1;
 }
 
+
+/* =========================
+   TEAM NAME
+========================= */
 
 .poster-team{
     color:#ffe500;
     font-size:19px;
+    font-weight:400;
     margin-top:3px;
     line-height:1.15;
 }
@@ -132,29 +153,35 @@
 }
 
 
-/* Mobile */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:500px){
 
     .poster-result-number{
         font-size:38px;
+        left:38%;
     }
 
     .poster-category{
         font-size:22px;
+        left:38%;
     }
 
     .poster-programme{
         font-size:25px;
+        left:38%;
     }
 
     .poster-winner{
-        left:41%;
-        width:55%;
+        left:43%;
+        width:54%;
     }
 
     .poster-name{
         font-size:17px;
+        font-weight:400 !important;
     }
 
     .poster-team{
@@ -269,7 +296,7 @@ Choose Programme
         alt="Result Poster">
 
 
-    <!-- Result Number -->
+    <!-- RESULT NUMBER -->
 
     <div
         class="poster-result-number"
@@ -277,7 +304,7 @@ Choose Programme
     </div>
 
 
-    <!-- Category -->
+    <!-- CATEGORY -->
 
     <div
         class="poster-category"
@@ -285,7 +312,7 @@ Choose Programme
     </div>
 
 
-    <!-- Programme -->
+    <!-- PROGRAMME -->
 
     <div
         class="poster-programme"
@@ -293,7 +320,9 @@ Choose Programme
     </div>
 
 
-    <!-- FIRST PRIZE -->
+    <!-- =========================
+         FIRST PRIZE
+    ========================= -->
 
     <div class="poster-winner winner-1">
 
@@ -310,7 +339,9 @@ Choose Programme
     </div>
 
 
-    <!-- SECOND PRIZE -->
+    <!-- =========================
+         SECOND PRIZE
+    ========================= -->
 
     <div class="poster-winner winner-2">
 
@@ -325,11 +356,10 @@ Choose Programme
         </div>
 
 
-        <!-- Second person if there are two
-             Second Prize winners -->
+        <!-- SECOND PERSON -->
 
         <div
-            class="second-person"
+            class="second-person poster-name"
             id="posterSecondName2">
         </div>
 
@@ -341,7 +371,9 @@ Choose Programme
     </div>
 
 
-    <!-- THIRD PRIZE -->
+    <!-- =========================
+         THIRD PRIZE
+    ========================= -->
 
     <div class="poster-winner winner-3">
 
@@ -370,9 +402,7 @@ Choose Programme
    PROGRAMMES
 ========================= */
 
-
 const programmes = {
-
 
 junior: [
 
@@ -476,11 +506,12 @@ general: [
    RESULT DATA
 ========================= */
 
-
 const resultsData = {
 
 
-/* ---------- JUNIOR ---------- */
+/* =========================
+   JUNIOR
+========================= */
 
 junior: {
 
@@ -497,7 +528,7 @@ thirdTeam:"Thibreez"
 "Story Writing":{
 firstName:"Sahal Kt",
 firstTeam:"Thibreez",
-secondName:"Saeed ",
+secondName:"Saeed",
 secondTeam:"Sheeraz",
 thirdName:"Rabeeh KC",
 thirdTeam:"Ahvaz"
@@ -540,7 +571,7 @@ thirdTeam:"Thibreez"
 },
 
 "Spelling Bee English":{
-firstName:"Ziyad ",
+firstName:"Ziyad",
 firstTeam:"Thibreez",
 secondName:"Anfal",
 secondTeam:"Sheeraz",
@@ -551,7 +582,7 @@ thirdTeam:"Ahvaz"
 "Caption Writing":{
 firstName:"Saeed VP",
 firstTeam:"Sheeraz",
-secondName:"Zameel ",
+secondName:"Zameel",
 secondTeam:"Ahvaz",
 thirdName:"Aflah",
 thirdTeam:"Thibreez"
@@ -562,8 +593,8 @@ firstName:"Janish",
 firstTeam:"Ahvaz",
 secondName:"Jazlan",
 secondTeam:"Sheeraz",
-secondName2:"Sayyid Muhassir",
-secondTeam2:"Thibreez"
+thirdName:"Sayyid Muhassir",
+thirdTeam:"Thibreez"
 },
 
 "Typing Arabic":{
@@ -610,6 +641,7 @@ secondTeam:"Sheeraz",
 thirdName:"Sahal KT",
 thirdTeam:"Thibreez"
 },
+
 
 "Mappilappattu":{
 firstName:"Zameel",
@@ -749,7 +781,9 @@ thirdTeam:"Ahvaz"
 },
 
 
-/* ---------- SENIOR ---------- */
+/* =========================
+   SENIOR
+========================= */
 
 senior: {
 
@@ -889,6 +923,7 @@ thirdName:"Sinan C",
 thirdTeam:"Sheeraz"
 },
 
+
 "Mappilappattu":{
 firstName:"Hasbin Sha",
 firstTeam:"Ahvaz",
@@ -937,9 +972,9 @@ thirdTeam:"Thibreez"
 "Thadrees":{
 firstName:"Saeed Kv",
 firstTeam:"Thibreez",
-secondName:"Siraj ",
+secondName:"Siraj",
 secondTeam:"Sheeraz",
-thirdName:"Sa'ad ",
+thirdName:"Sa'ad",
 thirdTeam:"Ahvaz"
 },
 
@@ -982,7 +1017,9 @@ thirdTeam:"Sheeraz"
 },
 
 
-/* ---------- GENERAL ---------- */
+/* =========================
+   GENERAL
+========================= */
 
 general: {
 
@@ -1138,15 +1175,6 @@ secondName:"Saeed",
 secondTeam:"Thibreez",
 thirdName:"",
 thirdTeam:""
-},
-
-"Web Site":{
-firstName:"Abdul Samad",
-firstTeam:"Ahvaz",
-secondName:"",
-secondTeam:"",
-thirdName:"",
-thirdTeam:""
 }
 
 }
@@ -1158,7 +1186,6 @@ thirdTeam:""
    ELEMENTS
 ========================= */
 
-
 const category =
 document.getElementById("category");
 
@@ -1167,7 +1194,6 @@ document.getElementById("programme");
 
 const resultPoster =
 document.getElementById("resultPoster");
-
 
 const posterResultNumber =
 document.getElementById("posterResultNumber");
@@ -1178,13 +1204,11 @@ document.getElementById("posterCategory");
 const posterProgramme =
 document.getElementById("posterProgramme");
 
-
 const posterFirstName =
 document.getElementById("posterFirstName");
 
 const posterFirstTeam =
 document.getElementById("posterFirstTeam");
-
 
 const posterSecondName =
 document.getElementById("posterSecondName");
@@ -1192,13 +1216,11 @@ document.getElementById("posterSecondName");
 const posterSecondTeam =
 document.getElementById("posterSecondTeam");
 
-
 const posterSecondName2 =
 document.getElementById("posterSecondName2");
 
 const posterSecondTeam2 =
 document.getElementById("posterSecondTeam2");
-
 
 const posterThirdName =
 document.getElementById("posterThirdName");
@@ -1210,7 +1232,6 @@ document.getElementById("posterThirdTeam");
 /* =========================
    CATEGORY CHANGE
 ========================= */
-
 
 category.addEventListener("change", function(){
 
@@ -1245,7 +1266,6 @@ category.addEventListener("change", function(){
    PROGRAMME CHANGE
 ========================= */
 
-
 programme.addEventListener("change", function(){
 
     if(this.value === ""){
@@ -1264,132 +1284,17 @@ programme.addEventListener("change", function(){
     this.value;
 
 
+    /* =========================
+       GET RESULT
+    ========================= */
+
     const result =
     resultsData[categoryValue]?.[programmeValue];
 
 
     /* =========================
        RESULT NUMBER
-       Based on programme order
     ========================= */
 
     const programmeIndex =
-    programmes[categoryValue].indexOf(programmeValue);
-
-    const resultNumber =
-    String(programmeIndex + 1).padStart(2,"0");
-
-
-    posterResultNumber.textContent =
-    resultNumber;
-
-
-    /* =========================
-       CATEGORY
-    ========================= */
-
-    posterCategory.textContent =
-    categoryValue.charAt(0).toUpperCase()
-    + categoryValue.slice(1);
-
-
-    /* =========================
-       PROGRAMME
-    ========================= */
-
-    posterProgramme.textContent =
-    programmeValue;
-
-
-    /* =========================
-       NO RESULT
-    ========================= */
-
-    if(!result){
-
-        posterFirstName.textContent =
-        "Result Pending";
-
-        posterFirstTeam.textContent = "";
-
-        posterSecondName.textContent =
-        "Result Pending";
-
-        posterSecondTeam.textContent = "";
-
-        posterSecondName2.textContent = "";
-
-        posterSecondTeam2.textContent = "";
-
-        posterThirdName.textContent =
-        "Result Pending";
-
-        posterThirdTeam.textContent = "";
-
-        resultPoster.style.display = "block";
-
-        return;
-
-    }
-
-
-    /* =========================
-       FIRST PRIZE
-    ========================= */
-
-    posterFirstName.textContent =
-    result.firstName || "Result Pending";
-
-
-    posterFirstTeam.textContent =
-    result.firstTeam || "";
-
-
-    /* =========================
-       SECOND PRIZE
-    ========================= */
-
-    posterSecondName.textContent =
-    result.secondName || "Result Pending";
-
-
-    posterSecondTeam.textContent =
-   result.firstTeam || "";
-
-
-    /* Second Prize - second person */
-
-    posterSecondName2.textContent =
-    result.secondName2 || "";
-
-
-    posterSecondTeam2.textContent =
-    result.secondTeam || "";
-
-    /* =========================
-       THIRD PRIZE
-    ========================= */
-
-    posterThirdName.textContent =
-    result.thirdName || "Result Pending";
-
-
-    posterThirdTeam.textContent =
-    result.thirdTeam || "";
-
-
-    /* =========================
-       SHOW POSTER
-    ========================= */
-
-    resultPoster.style.display = "block";
-
-});
-
-
-</script>
-
-
-</body>
-
-</html>
+    programmes[cat
